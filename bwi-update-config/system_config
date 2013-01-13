@@ -1,0 +1,87 @@
+################################################################################
+# GENERAL SYSTEM INFORMATION
+################################################################################
+
+# This should match the ROS Installation instructions
+# see http://www.ros.org/wiki/groovy/Installation/Ubuntu#groovy.2BAC8-Installation.2BAC8-Sources.Setup_your_sources.list
+ubuntu_distro: precise
+
+# Contact information if a non-sudo user experiences a problem only an 
+# administrator can solve. Useful in case the user is doing something wrong or
+# there is a bug in the configuration or the update tool
+# admin_contact: ADMIN NAME <admin@email>
+
+################################################################################
+# SYSTEM INSTALL CONFIGURATION
+################################################################################
+
+apt_packages:
+# Packages we should not uninstall if subsequently dropped from the config
+  unmanaged:
+    - vim
+    - subversion
+    - git
+    - mercurial
+    - openssh-server
+    - python-netifaces
+# These packages will always be sync. If any package is installed through this
+# tool, then it will be removed if not present in subsequent updates
+  managed:
+    - ros-groovy-desktop-full
+    - ros-groovy-rx
+    - ros-groovy-rxgraph
+    - ros-groovy-rxtools
+    - ros-groovy-camera-umd         #uvc_camera
+    - ros-groovy-qt-ros
+    - ros-groovy-brown-remotelab    #teleop_twist_keyboard
+    - ros-groovy-laser-drivers
+    - ros-groovy-laser-filters
+    - ros-groovy-openni-launch
+    - ros-groovy-pr2-simulator
+    - ros-groovy-rocon-multimaster
+    - ros-groovy-zeroconf-avahi-suite
+
+################################################################################
+# DEFAULT USER INSTALL CONFIG
+################################################################################
+
+default_user:
+  # Taken from the default apt installation target
+  # /opt/ros/<ros_distro>
+  ros_distro: groovy
+
+  rosbuild: True
+  catkin: True
+  install_gazebo_models: True
+
+  # Locations where locally downloaded code will be installed
+  # These locations will automatically expand to the user's home directory
+  # (~/<directory>
+  ws:
+    rosbuild: ros/rosbuild_ws
+    catkin: ros/catkin_ws
+  gazebo_dir: ros/gazebo
+
+  # These paths can be absolute paths on the machine as well (though I don't think
+  # there is a good use case)
+  rosinstall:
+    rosbuild:
+     - type: uri
+       uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rosinstall
+     - type: uri
+       uri: https://raw.github.com/piyushk/freenect_stack/master/rosinstall/freenect.rosinstall 
+     - type: uri
+       uri: https://raw.github.com/utexas-bwi/multi_level_map/master/rosinstall/multi_level_map.rw.rosinstall
+     - type: rosinstall
+       rosinstall:
+         - svn:
+             local-name: gazebo_plugins
+             uri: https://code.ros.org/svn/ros-pkg/stacks/simulator_gazebo/tags/simulator_gazebo-1.7.6/gazebo_plugins/
+
+    catkin: []
+
+  # the patch uri can be an absolute paths on the machine as well
+  patches:
+    - gazebo_plugins:
+        type: rosbuild
+        uri: http://z.cs.utexas.edu/users/piyushk/share/gazebo_plugins.kinect_depth.patch 
