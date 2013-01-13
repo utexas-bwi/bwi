@@ -40,6 +40,7 @@ apt_packages:
     - ros-groovy-pr2-simulator
     - ros-groovy-rocon-multimaster
     - ros-groovy-zeroconf-avahi-suite
+    - ros-groovy-joystick-drivers
 
 ################################################################################
 # DEFAULT USER INSTALL CONFIG
