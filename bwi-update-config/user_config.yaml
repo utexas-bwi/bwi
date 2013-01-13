@@ -1,0 +1,40 @@
+# Taken from the default apt installation target
+# /opt/ros/<ros_distro>
+ros_distro: groovy
+
+rosbuild: True
+catkin: True
+install_gazebo_models: True
+
+# Locations where locally downloaded code will be installed
+# These locations will automatically expand to the user's home directory
+# (~/<directory>
+ws:
+  rosbuild: ros/rosbuild_ws
+  catkin: ros/catkin_ws
+gazebo_dir: ros/gazebo
+
+# These paths can be absolute paths on the machine as well (though I don't think
+# there is a good use case)
+rosinstall:
+  rosbuild:
+   - type: uri
+     uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rosinstall
+   - type: uri
+     uri: https://raw.github.com/piyushk/freenect_stack/master/rosinstall/freenect.rosinstall 
+   - type: uri
+     uri: https://raw.github.com/utexas-bwi/multi_level_map/master/rosinstall/multi_level_map.rw.rosinstall
+   - type: rosinstall
+     rosinstall:
+       - svn:
+           local-name: gazebo_plugins
+           uri: https://code.ros.org/svn/ros-pkg/stacks/simulator_gazebo/tags/simulator_gazebo-1.7.6/gazebo_plugins/
+
+  catkin: []
+
+# the patch uri can be an absolute paths on the machine as well
+patches:
+  - gazebo_plugins:
+      type: rosbuild
+      uri: http://z.cs.utexas.edu/users/piyushk/share/gazebo_plugins.kinect_depth.patch 
+
