@@ -40,6 +40,10 @@ apt_packages:
     - ros-groovy-pr2-simulator
     - ros-groovy-rocon-multimaster
     - ros-groovy-zeroconf-avahi-suite
+    - python-rosdep
+    - python-rosrelease
+    - python-rosinstall
+    - python-wstool
 
 ################################################################################
 # DEFAULT USER INSTALL CONFIG
