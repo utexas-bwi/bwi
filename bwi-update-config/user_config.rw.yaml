@@ -11,7 +11,7 @@ ws:
     dir: ros/rosbuild_ws
     rosinstall:
       - uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rw.rosinstall
-      - uri: https://raw.github.com/piyushk/freenect_stack/master/rosinstall/freenect.rw.rosinstall 
+      - uri: https://raw.github.com/piyushk/freenect_stack/master/rosinstall/freenect.rosinstall 
       - uri: https://raw.github.com/utexas-bwi/multi_level_map/master/rosinstall/multi_level_map.rw.rosinstall
       - svn:
           local-name: gazebo_plugins
