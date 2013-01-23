@@ -37,6 +37,7 @@ apt_packages:
     - ros-groovy-laser-drivers
     - ros-groovy-laser-filters
     - ros-groovy-openni-launch
+    - ros-groovy-depthimage-to-laserscan
     - ros-groovy-pr2-simulator
     - ros-groovy-rocon-multimaster
     - ros-groovy-zeroconf-avahi-suite
