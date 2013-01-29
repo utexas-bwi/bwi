@@ -16,14 +16,17 @@ ws:
       - svn:
           local-name: gazebo_plugins
           uri: https://code.ros.org/svn/ros-pkg/stacks/simulator_gazebo/tags/simulator_gazebo-1.7.6/gazebo_plugins/
+      # - svn:
+      #     local-name: gazebo
+      #     uri: https://code.ros.org/svn/ros-pkg/stacks/simulator_gazebo/tags/simulator_gazebo-1.7.6/gazebo/
       - svn:
           local-name: gazebo
-          uri: https://code.ros.org/svn/ros-pkg/stacks/simulator_gazebo/tags/simulator_gazebo-1.7.6/gazebo/
+          uri: https://code.ros.org/svn/ros-pkg/stacks/simulator_gazebo/tags/simulator_gazebo-1.7.9/gazebo/
 
     # the patch uri can be an absolute paths on the machine as well
     patches:
       - gazebo_plugins: http://z.cs.utexas.edu/users/piyushk/share/gazebo_plugins.kinect_depth.patch
-      - gazebo: http://zweb.cs.utexas.edu/users/piyushk/bwi_share/gazebo.urdf-model-origin.patch
+      # - gazebo: http://zweb.cs.utexas.edu/users/piyushk/bwi_share/gazebo.urdf-model-origin.patch
 
   catkin:
     type: catkin
