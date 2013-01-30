@@ -42,7 +42,8 @@ apt_packages:
     - ros-groovy-rocon-multimaster
     - ros-groovy-zeroconf-avahi-suite
     - ros-groovy-class-loader       # should get automatically pulled in, but it does not
-    - ros-groovy-libsegwayrmp
+    - ros-groovy-catkin       # should get automatically pulled in, but it does not
+    - ros-groovy-serial
     - python-rosdep
     - python-rosrelease
     - python-rosinstall
