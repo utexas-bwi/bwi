@@ -24,6 +24,10 @@ apt_packages:
     - mercurial
     - openssh-server
     - python-netifaces
+    - vim-gnome
+    - emacs
+    - meld
+
 # These packages will always be sync. If any package is installed through this
 # tool, then it will be removed if not present in subsequent updates
   managed:
