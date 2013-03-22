@@ -25,6 +25,7 @@ ws:
     patches:
       # - gazebo_plugins: http://z.cs.utexas.edu/users/piyushk/share/gazebo_plugins.kinect_depth.patch
       - gazebo: http://farnsworth.csres.utexas.edu/patches/gazebo.robot_namespace.patch
+      - gazebo: http://farnsworth.csres.utexas.edu/patches/gazebo.visual_plugin.patch
 
   catkin:
     type: catkin
