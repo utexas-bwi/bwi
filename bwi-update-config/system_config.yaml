@@ -27,6 +27,7 @@ apt_packages:
     - vim-gnome
     - emacs
     - meld
+    - sox
 
 # These packages will always be sync. If any package is installed through this
 # tool, then it will be removed if not present in subsequent updates
@@ -46,6 +47,7 @@ apt_packages:
     - ros-groovy-rocon-multimaster
     - ros-groovy-zeroconf-avahi-suite
     - ros-groovy-class-loader       # should get automatically pulled in, but it does not
+    - ros-groovy-camera-drivers
     - ros-groovy-catkin       # should get automatically pulled in, but it does not
     - ros-groovy-serial
     - python-rosdep
