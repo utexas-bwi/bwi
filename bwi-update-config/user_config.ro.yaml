@@ -12,7 +12,7 @@ ws:
     rosinstall:
       - uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rosinstall
       - uri: https://raw.github.com/piyushk/freenect_stack/master/rosinstall/freenect.rosinstall 
-      - uri: https://raw.github.com/utexas-bwi/multi_level_map/master/rosinstall/multi_level_map.rosinstall
+      #- uri: https://raw.github.com/utexas-bwi/multi_level_map/master/rosinstall/multi_level_map.rosinstall
 
   catkin:
     type: catkin
