@@ -32,6 +32,7 @@ apt_packages:
 # These packages will always be sync. If any package is installed through this
 # tool, then it will be removed if not present in subsequent updates
   managed:
+    - ros-groovy-audio-common
     - ros-groovy-desktop-full
     - ros-groovy-rx
     - ros-groovy-rxgraph
