@@ -28,7 +28,13 @@ apt_packages:
     - emacs
     - meld
     - sox
-    - arduino
+    - arduino                       #Arduino utilities
+    - libsdl1.2-dev                 #SDL Libraries
+    - libsdl1.2debian
+    - libsdl-image1.2
+    - libsdl-image1.2-dev
+    - libsddl-ttf2.0
+    - libsdl-ttf2.0-dev
 
 # These packages will always be sync. If any package is installed through this
 # tool, then it will be removed if not present in subsequent updates
