@@ -29,6 +29,12 @@ apt_packages:
     - meld
     - sox
     - arduino                       #Arduino utilities
+    - libsdl1.2-dev                 #SDL Libraries
+    - libsdl1.2debian
+    - libsdl-image1.2
+    - libsdl-image1.2-dev
+    - libsdl-ttf2.0
+    - libsdl-ttf2.0-dev
 
 # These packages will always be sync. If any package is installed through this
 # tool, then it will be removed if not present in subsequent updates
@@ -48,20 +54,17 @@ apt_packages:
     - ros-groovy-pr2-simulator
     - ros-groovy-rocon-multimaster
     - ros-groovy-zeroconf-avahi-suite
-    - ros-groovy-class-loader       # should get automatically pulled in, but it does not
     - ros-groovy-camera-drivers
-    - ros-groovy-catkin       # should get automatically pulled in, but it does not
     - ros-groovy-serial
+    - ros-groovy-libsegwayrmp
+    - ros-groovy-kobuki
+    - ros-groovy-kobuki-description
+    - ros-groovy-turtlebot
+    - ros-groovy-turtlebot-apps
     - python-rosdep
     - python-rosrelease
     - python-rosinstall
     - python-wstool
-    - libsdl1.2-dev                 #SDL Libraries
-    - libsdl1.2debian
-    - libsdl-image1.2
-    - libsdl-image1.2-dev
-    - libsdl-ttf2.0
-    - libsdl-ttf2.0-dev
 
 ################################################################################
 # DEFAULT USER INSTALL CONFIG

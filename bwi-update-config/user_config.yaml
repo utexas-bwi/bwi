@@ -9,35 +9,8 @@ ws:
   rosbuild:
     type: rosbuild
     dir: ros/rosbuild_ws
-    rosinstall:
-      - uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rw.rosinstall
-      - uri: https://raw.github.com/piyushk/freenect_stack/master/rosinstall/freenect.rosinstall 
-      #- uri: https://raw.github.com/utexas-bwi/multi_level_map/master/rosinstall/multi_level_map.rw.rosinstall
-      # - svn:
-      #     local-name: gazebo_plugins
-      #     uri: https://code.ros.org/svn/ros-pkg/stacks/simulator_gazebo/tags/simulator_gazebo-1.7.6/gazebo_plugins/
-      # - svn:
-      #     local-name: gazebo
-      #     uri: https://code.ros.org/svn/ros-pkg/stacks/simulator_gazebo/tags/simulator_gazebo-1.7.6/gazebo/
-      # - svn:
-      #     local-name: gazebo
-      #     uri: https://code.ros.org/svn/ros-pkg/stacks/simulator_gazebo/tags/simulator_gazebo-1.7.9/gazebo/
-
-    # the patch uri can be an absolute paths on the machine as well
-    # patches:
-    #   - gazebo_plugins: http://z.cs.utexas.edu/users/piyushk/share/gazebo_plugins.kinect_depth.patch
-      # - gazebo: http://zweb.cs.utexas.edu/users/piyushk/bwi_share/gazebo.urdf-model-origin.patch
 
   catkin:
     type: catkin
     dir: ros/catkin_ws
 
-  gazebo:
-    type: generic
-    dir: ros/gazebo
-    bash: |
-      export GAZEBO_MODEL_PATH=~/ros/gazebo/gazebo_models:${GAZEBO_MODEL_PATH}
-    rosinstall:
-      - hg:
-          local-name: gazebo_models
-          uri: https://bitbucket.org/osrf/gazebo_models
