@@ -11,12 +11,14 @@ ws:
     dir: ros/rosbuild_ws
     rosinstall:
       - uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rosinstall
-      - uri: https://raw.github.com/piyushk/freenect_stack/master/rosinstall/freenect.rosinstall 
-      #- uri: https://raw.github.com/utexas-bwi/multi_level_map/master/rosinstall/multi_level_map.rosinstall
 
   catkin:
     type: catkin
     dir: ros/catkin_ws
+    rosinstall:
+      - git:
+          local-name: segway_rmp
+          uri: https://github.com/segwayrmp/segway-rmp-ros-pkg.git
 
   gazebo:
     type: generic

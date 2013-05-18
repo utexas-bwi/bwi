@@ -61,6 +61,7 @@ apt_packages:
     - ros-groovy-kobuki-description
     - ros-groovy-turtlebot
     - ros-groovy-turtlebot-apps
+    - ros-groovy-freenect-stack
     - python-rosdep
     - python-rosrelease
     - python-rosinstall
