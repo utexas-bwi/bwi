@@ -1,21 +1,17 @@
 # syntax of the user configuration
 syntax_version: 0.1
 
-# Taken from the default apt installation target
-# /opt/ros/<ros_distro>
-ros_distro: groovy
-
 ws:
   rosbuild:
     type: rosbuild
-    dir: ros/rosbuild_ws
+    dir: rosbuild_ws
     rosinstall:
       - uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rw.rosinstall
       - uri: https://raw.github.com/utexas-bwi/bwi_experimental/master/rosinstall/bwi_experimental.rw.rosinstall 
 
   catkin:
     type: catkin
-    dir: ros/catkin_ws
+    dir: catkin_ws
     rosinstall:
       - git:
           local-name: libsegwayrmp
@@ -29,9 +25,9 @@ ws:
 
   gazebo:
     type: generic
-    dir: ros/gazebo
+    dir: gazebo
     bash: |
-      export GAZEBO_MODEL_PATH=~/ros/gazebo/gazebo_models:${GAZEBO_MODEL_PATH}
+      export GAZEBO_MODEL_PATH=@BASE_DIR@/gazebo/gazebo_models:${GAZEBO_MODEL_PATH}
     rosinstall:
       - hg:
           local-name: gazebo_models

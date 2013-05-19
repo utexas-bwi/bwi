@@ -1,0 +1,25 @@
+# syntax of the user configuration
+syntax_version: 0.1
+
+ws:
+  rosbuild:
+    type: rosbuild
+    dir: ros-navigation/rosbuild_ws
+    rosinstall:
+      - uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rw.rosinstall
+
+  catkin:
+    type: catkin
+    dir: ros-navigation/catkin_ws
+    rosinstall:
+      - git:
+          local-name: navigation
+          uri: https://github.com/ros-planning/navigation.git
+          version: hydro-devel
+      - git:
+          local-name: filters
+          uri: https://github.com/ros/filters.git
+          version: hydro-devel
+      - git:
+          local-name: laser_filters
+          uri: https://github.com/utexas-bwi/laser_filters.git
