@@ -4,13 +4,13 @@ syntax_version: 0.1
 ws:
   rosbuild:
     type: rosbuild
-    dir: ros-navigation/rosbuild_ws
+    dir: rosbuild_ws
     rosinstall:
       - uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rw.rosinstall
 
   catkin:
     type: catkin
-    dir: ros-navigation/catkin_ws
+    dir: catkin_ws
     rosinstall:
       - git:
           local-name: navigation
@@ -23,3 +23,13 @@ ws:
       - git:
           local-name: laser_filters
           uri: https://github.com/utexas-bwi/laser_filters.git
+
+  gazebo:
+    type: generic
+    dir: gazebo
+    bash: |
+      export GAZEBO_MODEL_PATH=@BASE_DIR@/gazebo/gazebo_models:${GAZEBO_MODEL_PATH}
+    rosinstall:
+      - hg:
+          local-name: gazebo_models
+          uri: https://bitbucket.org/osrf/gazebo_models
