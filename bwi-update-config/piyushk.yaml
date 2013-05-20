@@ -27,6 +27,9 @@ ws:
       - git:
           local-name: soft_kobuki
           uri: https://github.com/jihoonl/soft_kobuki.git
+      - git:
+          local-name: xacro
+          uri: https://github.com/ros/xacro.git
 
   gazebo:
     type: generic
