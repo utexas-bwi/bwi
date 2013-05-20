@@ -16,13 +16,6 @@ ws:
           local-name: navigation
           uri: https://github.com/ros-planning/navigation.git
           version: hydro-devel
-      - git:
-          local-name: filters
-          uri: https://github.com/ros/filters.git
-          version: hydro-devel
-      - git:
-          local-name: laser_filters
-          uri: https://github.com/utexas-bwi/laser_filters.git
 
   gazebo:
     type: generic

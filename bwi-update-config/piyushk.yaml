@@ -22,6 +22,7 @@ ws:
       - git:
           local-name: freenect_stack
           uri: git@github.com:ros-drivers/freenect_stack.git
+      - uri: https://raw.github.com/robotics-in-concert/rocon_concert/hydro-devel/rocon.rosinstall
 
   gazebo:
     type: generic
