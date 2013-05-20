@@ -24,6 +24,9 @@ ws:
           uri: git@github.com:ros-drivers/freenect_stack.git
       - uri: https://raw.github.com/robotics-in-concert/rocon_concert/hydro-devel/rocon.rosinstall
       - uri: https://raw.github.com/robotics-in-concert/rocon_multirobot_experimental/hydro-devel/multinav_concert.rosinstall
+      - gits:
+          local-name: soft_kobuki
+          uri: https://github.com/jihoonl/soft_kobuki.git
 
   gazebo:
     type: generic
