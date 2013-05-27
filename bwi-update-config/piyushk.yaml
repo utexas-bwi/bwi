@@ -34,6 +34,9 @@ ws:
           local-name: navigation
           uri: https://github.com/ros-planning/navigation.git
           version: hydro-devel
+      - git:
+          local-name: xacro
+          uri: https://github.com/ros/xacro.git
 
   gazebo:
     type: generic
