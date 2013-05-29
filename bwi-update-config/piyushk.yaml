@@ -28,6 +28,13 @@ ws:
           local-name: soft_kobuki
           uri: https://github.com/jihoonl/soft_kobuki.git
       - git:
+          local-name: eband_local_planner
+          uri: git@github.com:utexas-bwi/eband_local_planner.git
+      - git:
+          local-name: navigation
+          uri: https://github.com/ros-planning/navigation.git
+          version: hydro-devel
+      - git:
           local-name: xacro
           uri: https://github.com/ros/xacro.git
 
