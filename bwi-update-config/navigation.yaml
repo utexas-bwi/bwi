@@ -6,7 +6,16 @@ ws:
     type: rosbuild
     dir: rosbuild_ws
     rosinstall:
-      - uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rw.rosinstall
+      - uri: https://raw.github.com/utexas-bwi/segbot/master/rosinstall/segbot.rosinstall
+      - git:
+          local-name: bwi_experimental
+          uri: https://github.com/utexas-bwi/bwi_experimental.git
+      - hg:
+          local-name: simulator_gazebo
+          uri: https://piyushk@bitbucket.org/piyushk/simulator_gazebo
+          version: robot_namespace
+    patches:
+      - gazebo: http://farnsworth.csres.utexas.edu/share/gazebo.visual_plugins.meta.patch
 
   catkin:
     type: catkin
@@ -16,6 +25,10 @@ ws:
           local-name: navigation
           uri: https://github.com/ros-planning/navigation.git
           version: hydro-devel
+      - git:
+          local-name: eband_local_planner
+          uri: https://github.com/utexas-bwi/eband_local_planner.git
+          version: groovy-devel
 
   gazebo:
     type: generic
