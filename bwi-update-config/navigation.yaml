@@ -15,7 +15,7 @@ ws:
           uri: https://piyushk@bitbucket.org/piyushk/simulator_gazebo
           version: robot_namespace
     patches:
-      - simulator_gazebo: http://farnsworth.csres.utexas.edu/patches/gazebo.visual_plugins.meta.patch
+      - simulator_gazebo: http://farnsworth.csres.utexas.edu/patches/gazebo.visual_plugin.meta.patch
 
   catkin:
     type: catkin
