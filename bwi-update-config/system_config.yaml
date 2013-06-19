@@ -62,6 +62,7 @@ apt_packages:
     - ros-groovy-turtlebot
     - ros-groovy-turtlebot-apps
     - ros-groovy-freenect-stack
+    - ros-groovy-multi_level_map
     - ros-groovy-segway-rmp
     - python-rosdep
     - python-rosrelease
