@@ -8,11 +8,11 @@ Science Department.
 
 ### From Source
 
-To install all the BWI components from source on Ubuntu:
+To install all the BWI source components:
 
 First, [install ROS Hydro](http://wiki.ros.org/hydro/Installation/Ubuntu).
 
-Then, clone the source repositories:
+Next, clone the source repositories:
 
 ```
 $ source /opt/ros/hydro/setup.bash
@@ -21,15 +21,15 @@ $ cd ~/catkin_ws/src
 $ wstool init . https://raw.githubusercontent.com/utexas-bwi/bwi/master/rosinstall/bwi.rosinstall
 ```
 
-### Source Build
+Then, build them:
 
 ```
-$ cd ~/catkin_ws
+$ cd ..
 $ catkin_make
 $ source devel/setup.bash
 ```
 
-## From Binary Packages
+### From Binary Packages
 
 *Not yet available.  Coming soon.*
 
