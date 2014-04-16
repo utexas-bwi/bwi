@@ -13,18 +13,20 @@ To install all the BWI source components:
 First, [install ROS Hydro](http://wiki.ros.org/hydro/Installation/Ubuntu).
 
 Next, clone the source repositories:
-
 ```
 $ source /opt/ros/hydro/setup.bash
 $ mkdir -p ~/catkin_ws/src
-$ cd ~/catkin_ws/src
-$ wstool init . https://raw.githubusercontent.com/utexas-bwi/bwi/master/rosinstall/bwi.rosinstall
+$ cd ~/catkin_ws
+$ wstool init src https://raw.githubusercontent.com/utexas-bwi/bwi/master/rosinstall/bwi.rosinstall
 ```
 
-Then, build them:
-
+Install all dependencies:
 ```
-$ cd ..
+$ rosdep install --from-paths src --ignore-src --rosdistro hydro -y
+```
+
+Then, build everything:
+```
 $ catkin_make
 $ source devel/setup.bash
 ```
@@ -32,7 +34,6 @@ $ source devel/setup.bash
 ### From Binary Packages
 
 *Not yet available.  Coming soon.*
-
 ```
 $ sudo apt-get install ros-hydro-bwi
 ```
