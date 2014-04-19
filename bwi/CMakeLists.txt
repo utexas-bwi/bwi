@@ -1,13 +1,4 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(bwi)
 find_package(catkin REQUIRED)
-catkin_package()
-
-install(DIRECTORY launch/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch)
-
-# unit tests are enabled selectively
-if (CATKIN_ENABLE_TESTING)
-  find_package(roslaunch REQUIRED)
-  roslaunch_add_file_check(launch)
-endif (CATKIN_ENABLE_TESTING)
+catkin_metapackage()

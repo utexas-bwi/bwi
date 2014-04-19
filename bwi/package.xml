@@ -1,9 +1,10 @@
 <package>
   <name>bwi</name>
-  <version>0.0.1</version>
+  <version>0.1.0</version>
   <description>
-    Top-level Building-Wide Intelligence packages for the Gates Dell
-    Complex at the University of Texas at Austin.
+    Top-level ROS metapackage for the Building-Wide Intelligence (BWI)
+    project of the University of Texas at Austin.  It depends on all
+    released BWI packages and other useful ROS packages.
   </description>
 
   <license>BSD</license>
@@ -18,13 +19,33 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>segbot_bringup</run_depend>
-  <run_depend>segbot_gazebo</run_depend>
-  <run_depend>segbot_navigation</run_depend>
-  <run_depend>segbot_gazebo</run_depend>
-  <run_depend>utexas_gdc</run_depend>
+  <!-- Contents of this repository. -->
+  <run_depend>bwi_launch</run_depend>
 
-  <!-- testing dependencies -->
-  <build_depend>roslaunch</build_depend>
+  <!-- Consider adding metapackages for specific uses, such as:
+
+       bwi_desktop: including GUI interfaces
+       bwi_desktop_full: with extra packages for development work
+       bwi_viz: GUI interfaces and visualization tools
+  -->
+
+  <!-- All released metapackages and packages for the BWI project. -->
+  <run_depend>bwi_planning</run_depend>
+  <run_depend>segbot_simulation</run_depend>
+  <run_depend>segbot_apps</run_depend>
+  <run_depend>segbot</run_depend>
+  <run_depend>bwi_common</run_depend>
+
+  <!-- Extras -->
+  <run_depend>cmake_modules</run_depend>
+  <run_depend>openni_tracker</run_depend>
+  <run_depend>python-bloom</run_depend>
+  <run_depend>python-rosinstall</run_depend>
+  <run_depend>python-wstool</run_depend>
+  <run_depend>rosemacs-el</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
 
 </package>
