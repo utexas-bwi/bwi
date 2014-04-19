@@ -1,8 +1,23 @@
 # bwi
 
 This repository contains top-level ROS packages for the Building Wide
-Intelligence project of the University of Texas at Austin Computer
-Science Department.
+Intelligence (BWI) project of the University of Texas at Austin
+Computer Science Department.
+
+## BWI Repository Hierarchy
+
+Packages contained in various released BWI repostories may depend on
+other packages at the same or lower levels.  Dependencies on packages
+from higher-level repositories are not permitted.
+
+From top to bottom, the released repositories are:
+
+ * [bwi](http://wiki.ros.org/bwi)
+ * [bwi_planning](http://wiki.ros.org/bwi_planning)
+ * [segbot_simulation](http://wiki.ros.org/segbot_simulation)
+ * [segbot_apps](http://wiki.ros.org/segbot_apps)
+ * [segbot](http://wiki.ros.org/segbot)
+ * [bwi_common](http://wiki.ros.org/bwi_common)
 
 ## Installation
 
