@@ -14,6 +14,7 @@ From top to bottom, the released repositories are:
 
  * [bwi](http://wiki.ros.org/bwi)
  * [bwi_planning](http://wiki.ros.org/bwi_planning)
+ * [clasp](http://wiki.ros.org/clasp)
  * [segbot_simulation](http://wiki.ros.org/segbot_simulation)
  * [segbot_apps](http://wiki.ros.org/segbot_apps)
  * [segbot](http://wiki.ros.org/segbot)

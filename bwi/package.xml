@@ -29,8 +29,10 @@
        bwi_viz: GUI interfaces and visualization tools
   -->
 
-  <!-- All released metapackages and packages for the BWI project. -->
+  <!-- All released metapackages and packages for the BWI project in
+       top-down order. -->
   <run_depend>bwi_planning</run_depend>
+  <run_depend>clasp</run_depend>
   <run_depend>segbot_simulation</run_depend>
   <run_depend>segbot_apps</run_depend>
   <run_depend>segbot</run_depend>

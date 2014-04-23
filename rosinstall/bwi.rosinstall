@@ -2,6 +2,8 @@
     uri: 'https://github.com/utexas-bwi/bwi_common.git', version: master}
 - git: {local-name: bwi_planning,
     uri: 'https://github.com/utexas-bwi/bwi_planning.git', version: master}
+- git: {local-name: clasp,
+    uri: 'https://github.com/utexas-bwi/clasp.git', version: master}
 - git: {local-name: segbot,
     uri: 'https://github.com/utexas-bwi/segbot.git', version: master}
 - git: {local-name: segbot_apps,
