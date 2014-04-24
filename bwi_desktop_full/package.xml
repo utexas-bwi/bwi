@@ -1,0 +1,39 @@
+<package>
+  <name>bwi_desktop_full</name>
+  <version>0.1.0</version>
+  <description>
+    ROS desktop metapackage for the Building-Wide Intelligence (BWI)
+    project of the University of Texas at Austin.  It depends on all
+    released BWI packages and some other useful ROS packages.  These
+    packages include GUI components.
+  </description>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/bwi_desktop_full</url>
+  <url type="repository">https://github.com/utexas-bwi/bwi</url>
+  <url type="bugtracker">https://github.com/utexas-bwi/bwi/issues</url>
+
+  <maintainer email="jack.oquin@gmail.com">Jack O'Quin</maintainer>
+  <maintainer email="piyushk@gmail.com">Piyush Khandelwal</maintainer>
+  <author>Jack O'Quin</author>
+  <author>Piyush Khandelwal</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Top-level metapackage for released BWI packages. -->
+  <run_depend>bwi_desktop</run_depend>
+
+  <!-- Extras -->
+  <run_depend>cmake_modules</run_depend>
+  <run_depend>openni_tracker</run_depend>
+  <run_depend>python-bloom</run_depend>
+  <run_depend>python-rosinstall</run_depend>
+  <run_depend>python-wstool</run_depend>
+  <run_depend>rosemacs-el</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+
+</package>
