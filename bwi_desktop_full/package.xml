@@ -2,10 +2,10 @@
   <name>bwi_desktop_full</name>
   <version>0.1.0</version>
   <description>
-    ROS desktop metapackage for the Building-Wide Intelligence (BWI)
-    project of the University of Texas at Austin.  It depends on all
-    released BWI packages and some other useful ROS packages.  These
-    packages include GUI components.
+    ROS desktop full metapackage for the Building-Wide Intelligence
+    (BWI) project of the University of Texas at Austin.  It depends on
+    all released BWI packages and some other useful ROS packages.
+    These packages include GUI components.
   </description>
 
   <license>BSD</license>
@@ -27,7 +27,6 @@
   <!-- Extras -->
   <run_depend>cmake_modules</run_depend>
   <run_depend>openni_tracker</run_depend>
-  <run_depend>python-bloom</run_depend>
   <run_depend>python-rosinstall</run_depend>
   <run_depend>python-wstool</run_depend>
   <run_depend>rosemacs-el</run_depend>

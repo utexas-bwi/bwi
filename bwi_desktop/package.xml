@@ -26,7 +26,7 @@
   <run_depend>bwi_launch</run_depend>
   <run_depend>bwi_planning</run_depend>
   <run_depend>clasp</run_depend>
-  <run_depend>segbot_simulation</run_depend>
+  <run_depend>segbot_simulator</run_depend>
   <run_depend>segbot_apps</run_depend>
   <run_depend>segbot</run_depend>
   <run_depend>bwi_common</run_depend>
