@@ -26,7 +26,7 @@
 
   <!-- Extras -->
   <run_depend>cmake_modules</run_depend>
-  <run_depend>openni_tracker</run_depend>
+  <run_depend>python-bloom</run_depend>
   <run_depend>python-rosinstall</run_depend>
   <run_depend>python-wstool</run_depend>
   <run_depend>rosemacs-el</run_depend>
