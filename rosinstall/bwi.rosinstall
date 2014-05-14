@@ -1,3 +1,5 @@
+- git: {local-name: bwi,
+    uri: 'https://github.com/utexas-bwi/bwi.git', version: master}
 - git: {local-name: bwi_common,
     uri: 'https://github.com/utexas-bwi/bwi_common.git', version: master}
 - git: {local-name: bwi_planning,
@@ -10,5 +12,3 @@
     uri: 'https://github.com/utexas-bwi/segbot_apps.git', version: master}
 - git: {local-name: segbot_simulator,
     uri: 'https://github.com/utexas-bwi/segbot_simulator.git', version: master}
-- git: {local-name: bwi,
-    uri: 'https://github.com/utexas-bwi/bwi.git', version: master}
