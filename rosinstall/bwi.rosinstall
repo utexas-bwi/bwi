@@ -8,7 +8,7 @@
     uri: 'https://github.com/utexas-bwi/segbot_apps.git', version: master}
 - git: {local-name: segbot_simulator,
     uri: 'https://github.com/utexas-bwi/segbot_simulator.git', version: master}
-- git: {local-name: multi_level_map, uri: https://github.com/utexas-bwi/multi_level_map.git,
+- git: {local-name: multi_level_map, uri: 'https://github.com/utexas-bwi/multi_level_map.git',
     version: master}
 - git: {local-name: eband_local_planner, uri: 'https://github.com/utexas-bwi/eband_local_planner.git',
     version: master}
