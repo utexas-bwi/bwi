@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="robot" default="marvin" />
+
+  <group ns="$(arg robot)">
+
+    <!-- launch planner and reasoner -->
+    <include file="$(find bwi_kr_execution)/launch/bwi_kr_execution.launch">
+      <arg name="domain" value="$(find bwi_kr_execution)/domain/" />
+    </include>
+
+  </group>
+
+</launch>
