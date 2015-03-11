@@ -53,7 +53,7 @@
     </node>
 
     <!-- launch vizualization -->                                                                                          
-    <node name="rviz" type="rviz_runner.sh" pkg="segbot_navigation" args="$(find segbot_apps)/nav_eband.rviz $(arg robot)" />
+    <node name="rviz" type="rviz_runner.sh" pkg="segbot_navigation" args="$(find segbot_navigation)/rviz/nav_eband_marvin.rviz $(arg robot)" />
 
     <!-- launch the segbot gui -->
     <node name="gui" type="question_dialog_plugin" pkg="segbot_gui" />
