@@ -22,8 +22,8 @@
     </node>
 
     <!-- launch the interruptable action server -->
-    <node name="move_base_interruptable" pkg="segbot_apps" type="move_base_interruptable_server" />
-    <node name="move_base_interruptable_simple" pkg="segbot_apps" type="move_base_interruptable_simple" />
+    <node name="move_base_interruptable" pkg="segbot_navigation" type="move_base_interruptable_server" />
+    <node name="move_base_interruptable_simple" pkg="segbot_navigation" type="move_base_interruptable_simple" />
 
     <!-- start the and the robot -->
     <include file="$(find segbot_bringup)/launch/segbot_navigation.launch"> 
@@ -53,7 +53,7 @@
     </node>
 
     <!-- launch vizualization -->                                                                                          
-    <node name="rviz" type="rviz_runner.sh" pkg="segbot_apps" args="$(find segbot_apps)/nav_eband.rviz $(arg robot)" />
+    <node name="rviz" type="rviz_runner.sh" pkg="segbot_navigation" args="$(find segbot_apps)/nav_eband.rviz $(arg robot)" />
 
     <!-- launch the segbot gui -->
     <node name="gui" type="question_dialog_plugin" pkg="segbot_gui" />
