@@ -1,29 +1,33 @@
 <launch>
 
   <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/test.yaml" />
-  <arg name="robot_configuration" default="$(find segbot_bringup)/launch/includes/auxiliary.segbot_hokuyo.launch.xml" /> 
+  <arg name="robot_configuration"
+       default="$(find segbot_bringup)/launch/includes/auxiliary.segbot_hokuyo.launch.xml" /> 
   <arg name="robot" default="guimul" />
 
   <!-- start the simulation environment -->
-  <include file="$(find utexas_gdc)/launch/simulation_3ne.launch" />                                               
+  <include file="$(find utexas_gdc)/launch/simulation_3ne.launch" />
 
-  <!-- launch the multi map server for the simulated world -->                                                                 
-  <node name="multi_level_map_server" pkg="multi_level_map_server" type="multi_level_map_server">                        
+  <!-- launch the multi map server for the simulated world -->
+  <node name="multi_level_map_server" pkg="multi_level_map_server" type="multi_level_map_server">
     <param name="map_file" value="$(arg multimap_file)" />               
   </node>
 
   <!-- launch the fake available robot publisher that can be used to test concert services. -->
-  <node name="available_robot_publisher" pkg="segbot_apps" type="available_robot_publisher">
-    <param name="available_robots" value="rocon:/segbot/gamza/hydro/precise,rocon:/segbot/guimul/hydro/precise" />
+  <node name="available_robot_publisher" pkg="segbot_apps"
+        type="available_robot_publisher">
+    <param name="available_robots"
+           value="rocon:/segbot/gamza/hydro/precise,rocon:/segbot/guimul/hydro/precise" />
   </node>
 
   <rosparam command="load" file="$(find segbot_concert_services)/solutions/multi_robot_passer_gazebo/multi_robot_passer_gazebo_patroller.parameters" />
-  <node name="multi_robot_patroller" pkg="segbot_concert_services" type="multi_robot_patroller" />
+  <node name="multi_robot_patroller" pkg="segbot_concert_services"
+        type="multi_robot_patroller" />
 
   <group ns="$(arg robot)">
 
     <!-- also launch the level multiplexer and the level selector -->
-    <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">                                                 
+    <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
       <!-- <param name="global_frame_id" value="level_mux/map" /> -->
       <param name="global_frame_id" value="$(arg robot)/level_mux/map" />
       <remap from="map_metadata" to="/map_metadata" />
@@ -34,36 +38,42 @@
     </node>
 
     <!-- launch the interruptable action server -->
-    <node name="move_base_interruptable" pkg="segbot_apps" type="move_base_interruptable_server" />
-    <node name="move_base_interruptable_simple" pkg="segbot_apps" type="move_base_interruptable_simple" />
+    <node name="move_base_interruptable" pkg="segbot_navigation"
+          type="move_base_interruptable_server" />
+    <node name="move_base_interruptable_simple"
+          pkg="segbot_navigation"
+          type="move_base_interruptable_simple" />
 
     <!-- start the and the robot -->
-    <include file="$(find segbot_gazebo)/launch/segbot_mobile_base.launch">                                                
-      <arg name="configuration_file" value="$(arg robot_configuration)" />                                                 
+    <include file="$(find segbot_gazebo)/launch/segbot_mobile_base.launch">
+      <arg name="configuration_file" value="$(arg robot_configuration)" />
       <arg name="y" value="8.0" />
       <arg name="robotid" value="$(arg robot)" />
       <arg name="tf_prefix" value="$(arg robot)" />
       <arg name="map_frame" value="level_mux/map" /> 
-      <arg name="map_service" value="level_mux/static_map" />                                                                       
-      <arg name="map_topic" value="level_mux/map" />                                                                       
-      <arg name="navigation_map_topic" value="segbot_logical_navigator/map" />                                                                       
-      <arg name="launch_localization" value="true" />                                                                    
-      <arg name="use_fake_localization" value="false" />                                                                    
+      <arg name="map_service" value="level_mux/static_map" />
+      <arg name="map_topic" value="level_mux/map" />
+      <arg name="navigation_map_topic" value="segbot_logical_navigator/map" />
+      <arg name="launch_localization" value="true" />
+      <arg name="use_fake_localization" value="false" />
       <arg name="move_base_server" value="move_base_interruptable" />
-      <arg name="launch_move_base" value="true" />                                                                       
+      <arg name="launch_move_base" value="true" />
       <arg name="use_full_gazebo_model" value="false" />
-    </include>                                                                                                             
+    </include>
 
     <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
-    <node name="segbot_logical_navigator" pkg="segbot_logical_translator" type="segbot_logical_navigator">
+    <node name="segbot_logical_navigator"
+          pkg="segbot_logical_translator"
+          type="segbot_logical_navigator">
       <!-- <param name="global_frame_id" value="level_mux/map" /> -->
       <param name="global_frame_id" value="$(arg robot)/level_mux/map" />
       <remap from="move_base" to="move_base_interruptable" />
       <remap from="map_metadata" to="/map_metadata" />
     </node>
 
-    <!-- launch vizualization -->                                                                                          
-    <node name="rviz" type="rviz_runner.sh" pkg="segbot_apps" args="$(find segbot_apps)/nav_eband.rviz $(arg robot)" />
+    <!-- launch vizualization -->
+    <node name="rviz" type="rviz_runner.sh" pkg="segbot_navigation"
+          args="$(find segbot_navigation)/nav_eband.rviz $(arg robot)" />
 
   </group>
 
@@ -72,7 +82,7 @@
   <group ns="$(arg robot2)">
 
     <!-- also launch the level multiplexer and the level selector -->
-    <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">                                                 
+    <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
       <!-- <param name="global_frame_id" value="level_mux/map" /> -->
       <param name="global_frame_id" value="$(arg robot2)/level_mux/map" />
       <remap from="map_metadata" to="/map_metadata" />
@@ -83,38 +93,42 @@
     </node>
 
     <!-- launch the interruptable action server -->
-    <node name="move_base_interruptable" pkg="segbot_apps" type="move_base_interruptable_server" />
-    <node name="move_base_interruptable_simple" pkg="segbot_apps" type="move_base_interruptable_simple" />
+    <node name="move_base_interruptable" pkg="segbot_navigation"
+          type="move_base_interruptable_server" />
+    <node name="move_base_interruptable_simple" pkg="segbot_navigation"
+          type="move_base_interruptable_simple" />
 
     <!-- start the and the robot -->
-    <include file="$(find segbot_gazebo)/launch/segbot_mobile_base.launch">                                                
-      <arg name="configuration_file" value="$(arg robot_configuration)" />                                                 
+    <include file="$(find segbot_gazebo)/launch/segbot_mobile_base.launch">
+      <arg name="configuration_file" value="$(arg robot_configuration)" />
       <arg name="x" value="33.5" />
       <arg name="y" value="8" />
       <arg name="yaw" value="1.57" />
       <arg name="robotid" value="$(arg robot2)" />
       <arg name="tf_prefix" value="$(arg robot2)" />
       <arg name="map_frame" value="level_mux/map" /> 
-      <arg name="map_service" value="level_mux/static_map" />                                                                       
-      <arg name="map_topic" value="level_mux/map" />                                                                       
-      <arg name="navigation_map_topic" value="segbot_logical_navigator/map" />                                                                       
-      <arg name="launch_localization" value="true" />                                                                    
-      <arg name="use_fake_localization" value="false" />                                                                    
+      <arg name="map_service" value="level_mux/static_map" />
+      <arg name="map_topic" value="level_mux/map" />
+      <arg name="navigation_map_topic" value="segbot_logical_navigator/map" />
+      <arg name="launch_localization" value="true" />
+      <arg name="use_fake_localization" value="false" />
       <arg name="move_base_server" value="move_base_interruptable" />
-      <arg name="launch_move_base" value="true" />                                                                       
+      <arg name="launch_move_base" value="true" />
       <arg name="use_full_gazebo_model" value="false" />
-    </include>                                                                                                             
+    </include>
 
     <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
-    <node name="segbot_logical_navigator" pkg="segbot_logical_translator" type="segbot_logical_navigator">
+    <node name="segbot_logical_navigator" pkg="segbot_logical_translator"
+          type="segbot_logical_navigator">
       <!-- <param name="global_frame_id" value="level_mux/map" /> -->
       <param name="global_frame_id" value="$(arg robot2)/level_mux/map" />
       <remap from="move_base" to="move_base_interruptable" />
       <remap from="map_metadata" to="/map_metadata" />
     </node>
 
-    <!-- launch vizualization -->                                                                                          
-    <node name="rviz" type="rviz_runner.sh" pkg="segbot_apps" args="$(find segbot_apps)/nav_eband.rviz $(arg robot2)" />
+    <!-- launch vizualization -->
+    <node name="rviz" type="rviz_runner.sh" pkg="segbot_navigation"
+          args="$(find segbot_navigation)/nav_eband.rviz $(arg robot2)" />
 
   </group>
 
