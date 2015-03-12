@@ -22,21 +22,40 @@ From top to bottom, the released repositories are:
 
 ### From Source
 
-To install all the BWI source components:
+You can install all the BWI components normally built from source on
+either ROS Hydro or Indigo.
 
-First, [install ROS Hydro](http://wiki.ros.org/hydro/Installation/Ubuntu).
+First, [install ROS Hydro](http://wiki.ros.org/hydro/Installation/Ubuntu), 
+or [Indigo](http://wiki.ros.org/indigo/Installation/Ubuntu).
+
+Then, make sure the ROS_DISTRO environment variable is set correctly:
+
+```
+echo $ROS_DISTRO
+```
+
+It may already be.  If not, issue the appropriate one of these two
+shell commands:
+
+```
+$ export ROS_DISTRO=hydro
+```
+or
+```
+$ export ROS_DISTRO=indigo
+```
 
 Next, clone the source repositories:
 ```
-$ source /opt/ros/hydro/setup.bash
+$ source /opt/ros/$ROS_DISTRO/setup.bash
 $ mkdir -p ~/catkin_ws/src
 $ cd ~/catkin_ws
-$ wstool init src https://raw.githubusercontent.com/utexas-bwi/bwi/master/rosinstall/bwi.rosinstall
+$ wstool init src https://raw.githubusercontent.com/utexas-bwi/bwi/master/rosinstall/$ROS_DISTRO.rosinstall
 ```
 
 Install all dependencies:
 ```
-$ rosdep install --from-paths src --ignore-src --rosdistro hydro -y
+$ rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
 Then, build everything:
@@ -47,7 +66,9 @@ $ source devel/setup.bash
 
 ### From Binary Packages
 
-*Not yet available.  Coming soon.*
+You may install the latest binary release, when available, from the
+ROS package repository.  These may not always be the latest versions:
+
 ```
-$ sudo apt-get install ros-hydro-bwi
+$ sudo apt-get install ros-$ROS_DISTRO-bwi-desktop-full
 ```
