@@ -1,4 +1,4 @@
-<package>
+<package format="2">
   <name>bwi_desktop</name>
   <version>0.2.1</version>
   <description> 
@@ -23,15 +23,14 @@
   <!-- All released metapackages and packages for the BWI project in
        top-down order.  No package may depend on anything higher in
        the list. -->
-  <run_depend>bwi_launch</run_depend>
-  <run_depend>bwi_planning</run_depend>
-  <run_depend>clasp</run_depend>
-  <run_depend>segbot_simulator</run_depend>
-  <run_depend>segbot_apps</run_depend>
-  <run_depend>segbot</run_depend>
-  <run_depend>bwi_common</run_depend>
+  <exec_depend>bwi_launch</exec_depend>
+  <exec_depend>segbot_simulator</exec_depend>
+  <exec_depend>segbot_apps</exec_depend>
+  <exec_depend>segbot</exec_depend>
+  <exec_depend>bwi_common</exec_depend>
 
   <export>
+    <architecture-independent/>
     <metapackage/>
   </export>
 

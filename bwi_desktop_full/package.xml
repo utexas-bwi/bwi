@@ -1,4 +1,4 @@
-<package>
+<package format="2">
   <name>bwi_desktop_full</name>
   <version>0.2.1</version>
   <description>
@@ -21,17 +21,18 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <!-- Top-level metapackage for released BWI packages. -->
-  <run_depend>bwi_desktop</run_depend>
+  <!-- Top-level metapackage for all released BWI packages. -->
+  <exec_depend>bwi_desktop</exec_depend>
 
   <!-- Extras -->
-  <run_depend>cmake_modules</run_depend>
-  <run_depend>python-bloom</run_depend>
-  <run_depend>python-rosinstall</run_depend>
-  <run_depend>python-wstool</run_depend>
-  <run_depend>rosemacs-el</run_depend>
+  <exec_depend>python-bloom</exec_depend>
+  <exec_depend>python-catkin-tools</exec_depend>
+  <exec_depend>python-rosinstall</exec_depend>
+  <exec_depend>python-wstool</exec_depend>
+  <exec_depend>rosemacs-el</exec_depend>
 
   <export>
+    <architecture-independent/>
     <metapackage/>
   </export>
 
