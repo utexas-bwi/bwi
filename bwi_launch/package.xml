@@ -23,7 +23,10 @@
   <depend>multi_level_map_utils</depend>
   <depend>segbot_bringup</depend>
   <depend>segbot_gazebo</depend>
+  <depend>segbot_gui</depend>
+  <depend>segbot_logical_translator</depend>
   <depend>segbot_navigation</depend>
+  <depend>segbot_simulation_apps</depend>
   <depend>utexas_gdc</depend>
 
   <test_depend>roslaunch</test_depend>
