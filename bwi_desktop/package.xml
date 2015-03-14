@@ -30,7 +30,7 @@
   <exec_depend>bwi_common</exec_depend>
 
   <export>
-    <architecture-independent/>
+    <architecture_independent/>
     <metapackage/>
   </export>
 

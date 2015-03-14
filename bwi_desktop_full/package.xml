@@ -32,7 +32,7 @@
   <exec_depend>rosemacs-el</exec_depend>
 
   <export>
-    <architecture-independent/>
+    <architecture_independent/>
     <metapackage/>
   </export>
 
