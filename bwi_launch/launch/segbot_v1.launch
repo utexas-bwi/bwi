@@ -26,7 +26,7 @@
     <node name="move_base_interruptable_simple" pkg="segbot_navigation" type="move_base_interruptable_simple" />
 
     <!-- start the and the robot -->
-    <include file="$(find segbot_bringup)/launch/segbot_navigation.launch"> 
+    <include file="$(find segbot_bringup)/launch/segbot_v1.launch"> 
       <arg name="tf_prefix" value="$(arg robot)" />
     </include>
 

@@ -2,7 +2,7 @@
 
   <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/test.yaml" />
   <arg name="robot_configuration"
-       default="$(find segbot_bringup)/launch/includes/auxiliary.segbot_hokuyo.launch.xml" /> 
+       default="$(find segbot_bringup)/launch/includes/auxiliary.segbot_v2.launch.xml" /> 
   <arg name="robot" default="marvin" />
 
   <!-- start the simulation environment -->
