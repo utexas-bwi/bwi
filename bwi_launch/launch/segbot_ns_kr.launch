@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="ns"/>
+  <arg name="ns" default="marvin" />
 
   <!-- launch planner and reasoner -->
   <group ns="$(arg ns)">

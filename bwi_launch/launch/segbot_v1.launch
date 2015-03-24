@@ -6,7 +6,7 @@
     <param name="map_file" value="$(arg multimap_file)" />
   </node>
 
-  <include file="#(find bwi_launch)/launch/includes/segbot.launch.xml" />
+  <include file="$(find bwi_launch)/launch/includes/segbot.launch.xml" />
 
   <include file="$(find segbot_bringup)/launch/segbot_v1.launch" />
 
