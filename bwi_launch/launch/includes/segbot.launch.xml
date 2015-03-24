@@ -1,0 +1,40 @@
+<launch>
+
+  <!-- also launch the level multiplexer and the level selector -->
+  <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
+    <param name="global_frame_id" value="level_mux/map" />
+  </node>
+
+  <node name="level_selector" pkg="multi_level_map_utils" type="level_selector" />
+
+  <!-- launch the interruptable action server -->
+  <node name="move_base_interruptable" pkg="segbot_navigation" type="move_base_interruptable_server" />
+  <node name="move_base_interruptable_simple" pkg="segbot_navigation" type="move_base_interruptable_simple" />
+
+  <include file="$(find segbot_navigation)/launch/amcl.launch">
+    <arg name="map_service" value="level_mux/static_map" />
+    <arg name="map_topic" value="level_mux/map" />
+    <arg name="map_frame_id" value="level_mux/map" />
+    <arg name="base_frame_id" value="base_footprint" />
+    <arg name="odom_frame_id" value="odom" />
+  </include>
+
+  <include file="$(find segbot_navigation)/launch/move_base_eband.launch">
+    <arg name="map_topic" value="segbot_logical_navigator/map" />
+    <arg name="move_base_server" value="move_base_interruptable" />
+    <arg name="global_frame" value="level_mux/map" />
+  </include>
+
+  <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
+  <node name="segbot_logical_navigator" pkg="segbot_logical_translator" type="segbot_logical_navigator">
+    <param name="global_frame_id" value="level_mux/map" />
+    <remap from="move_base" to="move_base_interruptable" />
+  </node>
+
+  <!-- launch vizualization -->
+  <node name="rviz" type="rviz_runner" pkg="segbot_navigation" />
+
+  <!-- launch the segbot gui -->
+  <node name="gui" type="question_dialog_plugin" pkg="segbot_gui" />
+
+</launch>

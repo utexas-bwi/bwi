@@ -1,0 +1,65 @@
+<launch>
+
+  <arg name="ns" />
+
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="yaw" default="0" />
+  <arg name="robot_configuration" default="$(find segbot_bringup)/launch/includes/auxiliary.segbot_v2.launch.xml" />
+
+  <group ns="$(arg ns)">
+
+    <!-- also launch the level multiplexer and the level selector -->
+    <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
+      <param name="global_frame_id" value="$(arg ns)/level_mux/map" />
+      <remap from="map_metadata" to="/map_metadata" />
+    </node>
+
+    <node name="level_selector" pkg="multi_level_map_utils" type="level_selector">
+      <remap from="map_metadata" to="/map_metadata" />
+    </node>
+
+    <!-- launch the interruptable action server -->
+    <node name="move_base_interruptable" pkg="segbot_navigation" type="move_base_interruptable_server" />
+    <node name="move_base_interruptable_simple" pkg="segbot_navigation" type="move_base_interruptable_simple" />
+
+    <include file="$(find segbot_gazebo)/launch/segbot_mobile_base.launch">
+      <arg name="configuration_file" value="$(arg robot_configuration)" />
+      <arg name="x" value="$(arg x)" />
+      <arg name="y" value="$(arg y)" />
+      <arg name="yaw" value="$(arg yaw)" />
+      <arg name="robotid" value="$(arg ns)" />
+      <arg name="tf_prefix" value="$(arg ns)" />
+      <arg name="map_frame" value="level_mux/map" />
+      <arg name="map_service" value="level_mux/static_map" />
+      <arg name="map_topic" value="level_mux/map" />
+      <arg name="navigation_map_topic" value="segbot_logical_navigator/map" />
+      <arg name="launch_localization" value="true" />
+      <arg name="use_fake_localization" value="false" />
+      <arg name="move_base_server" value="move_base_interruptable" />
+      <arg name="launch_move_base" value="true" />
+      <arg name="use_full_gazebo_model" value="false" />
+    </include>
+
+    <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
+    <node name="segbot_logical_navigator" pkg="segbot_logical_translator" type="segbot_logical_navigator">
+      <param name="global_frame_id" value="$(arg ns)/level_mux/map" />
+      <remap from="move_base" to="move_base_interruptable" />
+      <remap from="map_metadata" to="/map_metadata" />
+    </node>
+
+    <!-- launch vizualization -->
+    <node name="rviz" type="rviz_runner" pkg="segbot_navigation" args="ns $(arg ns)" />
+
+    <!-- launch the segbot gui -->
+    <node name="gui" type="question_dialog_plugin" pkg="segbot_gui" />
+
+    <!-- launch the planner and reasoner -->
+    <include file="$(find bwi_kr_execution)/launch/bwi_kr_execution.launch">
+      <arg name="domain" value="$(find bwi_kr_execution)/domain_simulation/" />
+    </include>
+
+  </group>
+
+</launch>
+
