@@ -2,6 +2,13 @@
 Changelog for package bwi_desktop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* bwi_desktop: remove obsolete dependencies (`#17 <https://github.com/utexas-bwi/bwi/issues/17>`_)
+  also convert to package.xml format two
+  also convert and update bwi_desktop_full
+* Contributors: Jack O'Quin
+
 0.2.1 (2014-05-14)
 ------------------
 

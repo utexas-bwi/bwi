@@ -2,6 +2,15 @@
 Changelog for package bwi_launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* bwi_launch: add build dependencies for launch checking references (`#16 <https://github.com/utexas-bwi/bwi/issues/16>`_)
+  do not depend on segbot_gazebo twice
+* bwi_launch: dependency and launch file cleanup
+  partial fix for `#16 <https://github.com/utexas-bwi/bwi/issues/16>`_
+* added launch files for segbot v1 and v2 to bwi_launch
+* Contributors: Jack O'Quin, Piyush Khandelwal
+
 0.2.1 (2014-05-14)
 ------------------
 
