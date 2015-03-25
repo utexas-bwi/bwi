@@ -29,7 +29,6 @@
   <exec_depend>python-catkin-tools</exec_depend>
   <exec_depend>python-rosinstall</exec_depend>
   <exec_depend>python-wstool</exec_depend>
-  <exec_depend>rosemacs-el</exec_depend>
 
   <export>
     <architecture_independent/>
