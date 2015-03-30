@@ -48,6 +48,7 @@
   <!-- launch the planner and reasoner -->
   <include file="$(find bwi_kr_execution)/launch/bwi_kr_execution.launch">
     <arg name="domain" value="$(find bwi_kr_execution)/domain_simulation/" />
+    <arg name="simulation" value="true" />
   </include>
 
 </launch>
