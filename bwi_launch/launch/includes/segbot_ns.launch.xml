@@ -1,6 +1,7 @@
 <launch>
 
   <arg name="ns" />
+  <arg name="laser_max_range" default="4.0" />
 
   <group ns="$(arg ns)">
 
@@ -25,6 +26,7 @@
       <arg name="map_frame_id" value="$(arg ns)/level_mux/map" />
       <arg name="base_frame_id" value="$(arg ns)/base_footprint" />
       <arg name="odom_frame_id" value="$(arg ns)/odom" />
+      <arg name="laser_max_range" value="$(arg laser_max_range)" />
     </include>
 
     <!-- launch move_base -->
