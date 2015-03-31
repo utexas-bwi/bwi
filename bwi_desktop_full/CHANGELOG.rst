@@ -2,6 +2,11 @@
 Changelog for package bwi_desktop_full
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* removed rosemacs-el from bwi_desktop_full dependency list. closes `#18 <https://github.com/utexas-bwi/bwi/issues/18>`_.
+* Contributors: Piyush Khandelwal
+
 0.3.0 (2015-03-24)
 ------------------
 * bwi_desktop: remove obsolete dependencies (`#17 <https://github.com/utexas-bwi/bwi/issues/17>`_)

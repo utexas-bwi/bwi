@@ -2,6 +2,12 @@
 Changelog for package bwi_launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* updated launch files to account for upcoming amcl.launch change.
+* updated launch file to automatically start the planner/reasoner in simulation mode.
+* Contributors: Piyush Khandelwal
+
 0.3.0 (2015-03-24)
 ------------------
 * bwi_launch: add build dependencies for launch checking references (`#16 <https://github.com/utexas-bwi/bwi/issues/16>`_)

@@ -2,6 +2,9 @@
 Changelog for package bwi_desktop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.3.0 (2015-03-24)
 ------------------
 * bwi_desktop: remove obsolete dependencies (`#17 <https://github.com/utexas-bwi/bwi/issues/17>`_)
