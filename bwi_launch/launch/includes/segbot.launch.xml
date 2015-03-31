@@ -1,5 +1,7 @@
 <launch>
 
+  <arg name="laser_max_range" default="4.0" />
+
   <!-- also launch the level multiplexer and the level selector -->
   <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
     <param name="global_frame_id" value="level_mux/map" />
@@ -17,6 +19,7 @@
     <arg name="map_frame_id" value="level_mux/map" />
     <arg name="base_frame_id" value="base_footprint" />
     <arg name="odom_frame_id" value="odom" />
+    <arg name="laser_max_range" value="$(arg laser_max_range)" />
   </include>
 
   <include file="$(find segbot_navigation)/launch/move_base_eband.launch">
