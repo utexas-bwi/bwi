@@ -2,8 +2,8 @@
 Changelog for package bwi_launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.1 (2015-03-31)
+------------------
 * updated launch files to account for upcoming amcl.launch change.
 * updated launch file to automatically start the planner/reasoner in simulation mode.
 * Contributors: Piyush Khandelwal
