@@ -50,6 +50,9 @@
     <arg name="domain" value="$(find bwi_kr_execution)/domain_simulation/" />
     <arg name="simulation" value="true" />
   </include>
+  
+  <!-- launch the sound play node -->
+  <node name="soundplay" pkg="sound_play" type="soundplay_node.py" />
 
 </launch>
 
