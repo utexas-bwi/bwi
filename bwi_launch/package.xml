@@ -20,6 +20,7 @@
 
   <depend>bwi_msgs</depend>
   <depend>bwi_kr_execution</depend>
+  <depend>bwi_tools</depend>
   <depend>multi_level_map_server</depend>
   <depend>multi_level_map_utils</depend>
   <depend>segbot_bringup</depend>
