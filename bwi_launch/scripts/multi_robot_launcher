@@ -1,0 +1,60 @@
+#!/usr/bin/env python
+
+import os
+import rospy
+import tempfile
+
+from bwi_msgs.msg import AvailableRobot, AvailableRobotArray
+from bwi_tools import start_roslaunch_process, stop_roslaunch_process
+
+def construct_launch_file(fd, launch_file, config, msg):
+    msg.robots = []
+    launch_file_str = "<launch>"
+    for robot in config['robots']:
+        robot_name = robot['name']
+        robot_x = robot['location'][0]
+        robot_y = robot['location'][1]
+        robot_yaw = robot['location'][2]
+        launch_file_str += '<include file="%s"><arg name="x" value="%f" /><arg name="y" value="%f" /><arg name="yaw" value="%f" /><arg name="ns" value="%s" /></include> '%(launch_file, robot_x, robot_y, robot_yaw, robot_name)
+        msg.robots.append(AvailableRobot(robot_name, AvailableRobot.SEGBOT))
+    launch_file_str += '</launch>'
+    fd.write(launch_file_str)
+
+def robot_publisher():
+
+    process = None
+    temp_file_name = None
+    try:
+        pub = rospy.Publisher('/available_robots', AvailableRobotArray, latch=True)
+
+        # Create a temporary file.
+        temp_launch_file = tempfile.NamedTemporaryFile(suffix=".launch", delete=False)
+        temp_file_name = temp_launch_file.name
+
+        # Construct the launch file.
+        msg = AvailableRobotArray()
+        configuration = rospy.get_param('~configuration')
+        launch_file = rospy.get_param('~launch_file', '$(find bwi_launch)/launch/includes/simulation_ns.launch.xml')
+        construct_launch_file(temp_launch_file, launch_file, configuration, msg)
+
+        temp_launch_file.close()
+        start_roslaunch_process(None, temp_file_name)
+
+        pub.publish(msg)
+        rospy.spin()
+
+    except rospy.ROSInterruptException:
+        pass
+
+    if process is not None:
+        stop_roslaunch_process(process)
+
+    if temp_file_name is not None:
+        try:
+            os.remove(temp_file_name)
+        except OSError:
+            pass
+
+if __name__ == '__main__':
+        rospy.init_node('robot_publisher', anonymous=True)
+        robot_publisher()

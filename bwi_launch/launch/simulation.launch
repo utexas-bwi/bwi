@@ -10,6 +10,9 @@
     <param name="map_file" value="$(arg multimap_file)" />
   </node>
 
+  <!-- Set the default level we'd like this robot to start on -->
+  <param name="level_mux/default_current_level" value="level1" />
+
   <include file="$(find segbot_simulation_apps)/launch/door_handler.launch" />
 
   <include file="$(find bwi_launch)/launch/includes/simulation.launch.xml">

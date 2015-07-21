@@ -6,6 +6,9 @@
     <param name="map_file" value="$(arg multimap_file)" />
   </node>
 
+  <!-- Set the default level we'd like this robot to start on -->
+  <param name="level_mux/default_current_level" value="3rdFloor" />
+
   <include file="$(find bwi_launch)/launch/includes/segbot.launch.xml" />
 
   <include file="$(find segbot_bringup)/launch/segbot_v1.launch" />

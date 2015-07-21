@@ -1,8 +1,6 @@
 <launch>
 
   <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/test.yaml" />
-  <arg name="robot1" default="marvin" />
-  <arg name="robot2" default="roberto" />
 
   <!-- start the simulation environment -->
   <include file="$(find utexas_gdc)/launch/simulation_3ne.launch" />
@@ -14,16 +12,8 @@
 
   <include file="$(find segbot_simulation_apps)/launch/door_handler.launch" />
 
-  <!-- launch robot1 -->
-  <include file="$(find bwi_launch)/launch/includes/simulation_ns.launch.xml">
-    <arg name="y" value="8.0" />
-    <arg name="ns" value="$(arg robot1)" />
-  </include>
-
-  <!-- launch robot2 -->
-  <include file="$(find bwi_launch)/launch/includes/simulation_ns.launch.xml">
-    <arg name="y" value="10.0" />
-    <arg name="ns" value="$(arg robot2)" />
-  </include>
+  <node name="multi_robot_launcher" pkg="bwi_launch" type="multi_robot_launcher">
+    <rosparam command="load" param="configuration" file="$(find bwi_launch)/config/simulation.yaml" />
+  </node>
 
 </launch>
