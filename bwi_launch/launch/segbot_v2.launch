@@ -15,4 +15,6 @@
 
   <include file="$(find segbot_bringup)/launch/segbot_v2.launch" />
 
+  <include file="$(find bwi_logging)/launch/record.launch" />
+
 </launch>
