@@ -13,8 +13,6 @@ from higher-level repositories are not permitted.
 From top to bottom, the released repositories are:
 
  * [bwi](http://wiki.ros.org/bwi)
- * [segbot_simulator](http://wiki.ros.org/segbot_simulator)
- * [segbot_apps](http://wiki.ros.org/segbot_apps)
  * [segbot](http://wiki.ros.org/segbot)
  * [bwi_common](http://wiki.ros.org/bwi_common)
 
@@ -24,6 +22,9 @@ From top to bottom, the released repositories are:
 
 You can install all the BWI components normally built from source on
 either ROS Hydro or Indigo.
+
+The Hydro version is now *deprecated*. It may work, but is no longer actively 
+maintained.
 
 First, [install ROS Hydro](http://wiki.ros.org/hydro/Installation/Ubuntu), 
 or [Indigo](http://wiki.ros.org/indigo/Installation/Ubuntu).
