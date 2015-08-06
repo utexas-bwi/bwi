@@ -2,8 +2,8 @@
 Changelog for package bwi_desktop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.3 (2015-08-06)
+------------------
 * delete metapackage dependencies on deprecated repositories (`utexas-bwi/segbot#46 <https://github.com/utexas-bwi/segbot/issues/46>`_)
 * Contributors: Jack O'Quin
 
