@@ -24,8 +24,6 @@
        top-down order.  No package may depend on anything higher in
        the list. -->
   <exec_depend>bwi_launch</exec_depend>
-  <exec_depend>segbot_simulator</exec_depend>
-  <exec_depend>segbot_apps</exec_depend>
   <exec_depend>segbot</exec_depend>
   <exec_depend>bwi_common</exec_depend>
 
