@@ -2,6 +2,9 @@
 Changelog for package bwi_launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.3.2 (2015-08-06)
 ------------------
 * removed segbot_v2.arm.launch as mico driver is not yet

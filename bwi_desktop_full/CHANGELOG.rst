@@ -2,6 +2,9 @@
 Changelog for package bwi_desktop_full
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.3.2 (2015-08-06)
 ------------------
 
