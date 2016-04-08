@@ -5,6 +5,8 @@
   <arg name="yaw" default="0" />
   <arg name="robot_configuration" default="$(find segbot_bringup)/launch/includes/auxiliary.segbot_v2.launch.xml" />
 
+  <arg name="localization_scan_topic" default="scan_filtered" />
+
   <!-- also launch the level multiplexer and the level selector -->
   <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
     <param name="global_frame_id" value="level_mux/map" />
@@ -27,6 +29,7 @@
     <arg name="map_topic" value="level_mux/map" />
     <arg name="navigation_map_topic" value="segbot_logical_navigator/map" />
     <arg name="launch_localization" value="true" />
+    <arg name="localization_scan_topic" default="$(arg localization_scan_topic)" />
     <arg name="use_fake_localization" value="false" />
     <arg name="move_base_server" value="move_base_interruptable" />
     <arg name="launch_move_base" value="true" />
