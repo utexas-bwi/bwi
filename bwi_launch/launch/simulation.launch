@@ -1,9 +1,9 @@
 <launch>
 
-  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/test.yaml" />
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml" />
 
   <!-- start the simulation environment -->
-  <include file="$(find utexas_gdc)/launch/simulation_3ne.launch" />
+  <include file="$(find utexas_gdc)/launch/simulation_multimap.launch" />
 
   <!-- launch the multi map server for the simulated world -->
   <node name="multi_level_map_server" pkg="multi_level_map_server" type="multi_level_map_server">
@@ -11,12 +11,13 @@
   </node>
 
   <!-- Set the default level we'd like this robot to start on -->
-  <param name="level_mux/default_current_level" value="level1" />
+  <param name="level_mux/default_current_level" value="3rdFloor" />
 
   <include file="$(find segbot_simulation_apps)/launch/door_handler.launch" />
 
   <include file="$(find bwi_launch)/launch/includes/simulation.launch.xml">
-    <arg name="y" value="8.0" />
+    <arg name="x" value="15.0" />
+    <arg name="y" value="110.0" />
   </include>
 
 </launch>
