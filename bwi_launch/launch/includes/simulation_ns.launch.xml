@@ -59,6 +59,11 @@
       <arg name="domain" value="$(find bwi_kr_execution)/domain_simulation/" />
     </include>
 
+    <!-- launch the teleporter for this particular robot -->
+    <node name="robot_teleporter" pkg="segbot_simulation_apps" type="robot_teleporter">
+      <param name="robotid" value="$(arg ns)" />
+    </node>
+
   </group>
 
 </launch>

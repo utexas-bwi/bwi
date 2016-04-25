@@ -13,7 +13,11 @@
   <!-- Set the default level we'd like this robot to start on -->
   <param name="level_mux/default_current_level" value="3rdFloor" />
 
+  <!-- Add simulation helpers for opening and closing doors, and teleporting the robot through elevators. -->
   <include file="$(find segbot_simulation_apps)/launch/door_handler.launch" />
+  <node name="robot_teleporter" pkg="segbot_simulation_apps" type="robot_teleporter">
+    <param name="robotid" value="segbot" />
+  </node>
 
   <include file="$(find bwi_launch)/launch/includes/simulation.launch.xml">
     <arg name="x" value="15.0" />
