@@ -2,6 +2,7 @@
 
   <arg name="laser_max_range" default="4.0" />
   <arg name="localization_scan_topic" default="scan_filtered" />
+  <arg name="move_base_config" default="segbotv2" />
 
   <!-- also launch the level multiplexer and the level selector -->
   <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
@@ -28,6 +29,7 @@
     <arg name="map_topic" value="segbot_logical_navigator/map" />
     <arg name="move_base_server" value="move_base_interruptable" />
     <arg name="global_frame" value="level_mux/map" />
+    <arg name="config" default="segbotv2" />
   </include>
 
   <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
