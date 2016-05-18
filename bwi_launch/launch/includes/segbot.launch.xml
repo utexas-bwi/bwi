@@ -29,7 +29,7 @@
     <arg name="map_topic" value="segbot_logical_navigator/map" />
     <arg name="move_base_server" value="move_base_interruptable" />
     <arg name="global_frame" value="level_mux/map" />
-    <arg name="config" default="segbotv2" />
+    <arg name="config" default="$(arg move_base_config)" />
   </include>
 
   <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
