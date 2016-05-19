@@ -2,6 +2,7 @@
 
   <arg name="ns" />
   <arg name="laser_max_range" default="4.0" />
+  <arg name="move_base_config" default="segbotv2" />
 
   <group ns="$(arg ns)">
 
@@ -34,6 +35,7 @@
       <arg name="map_topic" value="segbot_logical_navigator/map" />
       <arg name="move_base_server" value="move_base_interruptable" />
       <arg name="global_frame" value="$(arg ns)/level_mux/map" />
+      <arg name="config" default="segbotv2" />
     </include>
 
     <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
