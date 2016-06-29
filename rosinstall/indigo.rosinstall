@@ -7,10 +7,6 @@
     uri: https://github.com/utexas-bwi/bwi_common.git
     version: master
 - git:
-    local-name: multi_level_map
-    uri: https://github.com/utexas-bwi/multi_level_map.git
-    version: master
-- git:
     local-name: segbot
     uri: https://github.com/utexas-bwi/segbot.git
     version: master
