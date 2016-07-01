@@ -65,6 +65,11 @@ $ catkin_make
 $ source devel/setup.bash
 ```
 
+### For Version 3 Robot
+
+To utilize the code base on the Version 3 Robot it is also required to add some enviroment variables to your bashrc file. 
+The steps for doing this and the specific environment variables are described on wiki.
+
 ### From Binary Packages
 
 You may install the latest binary release, when available, from the
