@@ -18,18 +18,19 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>bwi_msgs</depend>
-  <depend>bwi_kr_execution</depend>
-  <depend>bwi_tools</depend>
-  <depend>multi_level_map_server</depend>
-  <depend>multi_level_map_utils</depend>
-  <depend>segbot_bringup</depend>
-  <depend>segbot_gazebo</depend>
-  <depend>segbot_gui</depend>
-  <depend>segbot_logical_translator</depend>
-  <depend>segbot_navigation</depend>
-  <depend>segbot_simulation_apps</depend>
-  <depend>utexas_gdc</depend>
+  <exec_depend>bwi_kr_execution</exec_depend>
+  <exec_depend>bwi_logging</exec_depend>
+  <exec_depend>bwi_msgs</exec_depend>
+  <exec_depend>bwi_tools</exec_depend>
+  <exec_depend>multi_level_map_server</exec_depend>
+  <exec_depend>multi_level_map_utils</exec_depend>
+  <exec_depend>segbot_bringup</exec_depend>
+  <exec_depend>segbot_gazebo</exec_depend>
+  <exec_depend>segbot_gui</exec_depend>
+  <exec_depend>segbot_logical_translator</exec_depend>
+  <exec_depend>segbot_navigation</exec_depend>
+  <exec_depend>segbot_simulation_apps</exec_depend>
+  <exec_depend>utexas_gdc</exec_depend>
 
   <test_depend>roslaunch</test_depend>
 
