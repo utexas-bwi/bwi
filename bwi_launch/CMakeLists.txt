@@ -15,5 +15,15 @@ catkin_install_python(PROGRAMS scripts/multi_robot_launcher
 # unit tests are enabled selectively
 if (CATKIN_ENABLE_TESTING)
   find_package(roslaunch REQUIRED)
-  roslaunch_add_file_check(launch)
+
+  ## Test individual files that do work, restore testing of the
+  #  rest when segway_v3 packages have been released.
+  #roslaunch_add_file_check(launch)
+  roslaunch_add_file_check(launch/multi_robot_simulation.launch)
+  roslaunch_add_file_check(launch/segbot_ns_kr.launch)
+  roslaunch_add_file_check(launch/segbot_v1.launch)
+  roslaunch_add_file_check(launch/segbot_v2.launch)
+  #roslaunch_add_file_check(launch/segbot_v3.launch)
+  roslaunch_add_file_check(launch/simulation.launch)
+  roslaunch_add_file_check(launch/simulation_v3.launch)
 endif()
