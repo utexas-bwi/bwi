@@ -16,7 +16,7 @@
   <node name="move_base_interruptable_simple" pkg="segbot_navigation" type="move_base_interruptable_simple" />
 
   <!-- launch passive (no tours enabled) virtour -->
-  <include file="$(find bwi_virtour)/launch/virtour_passive.launch">
+  <include file="$(find bwi_virtour)/launch/virtour_passive.launch"> </include>
 
   <include file="$(find segbot_navigation)/launch/amcl.launch">
     <arg name="map_service" value="level_mux/static_map" />
