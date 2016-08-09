@@ -67,13 +67,15 @@ $ source devel/setup.bash
 
 ### For Version 3 Robot
 
-To utilize the code base on the Version 3 Robot it is also required to add some enviroment variables to your bashrc file. 
-The steps for doing this and the specific environment variables are described on wiki.
+To use this code on the Version 3 Segway Robot, one must also define
+some enviroment variables.  The steps for doing this and the specific
+environment variables are described on the project wiki.  Eventually,
+that should no longer be necessary.
 
 ### From Binary Packages
 
 You may install the latest binary release, when available, from the
-ROS package repository.  These may not always be the latest versions:
+ROS package repository.  These will not usually be the latest versions:
 
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-bwi-desktop-full
