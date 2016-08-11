@@ -22,6 +22,7 @@
   <exec_depend>bwi_logging</exec_depend>
   <exec_depend>bwi_msgs</exec_depend>
   <exec_depend>bwi_tools</exec_depend>
+  <exec_depend>bwi_virtour</exec_depend>
   <exec_depend>multi_level_map_server</exec_depend>
   <exec_depend>multi_level_map_utils</exec_depend>
   <exec_depend>segbot_bringup</exec_depend>
