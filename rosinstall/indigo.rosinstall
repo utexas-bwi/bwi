@@ -17,7 +17,7 @@
 - git:
     local-name: segway_v3
     uri: https://github.com/utexas-bwi/segway_v3.git
-    version: piyushk/remove_ros_ip_dependence
+    version: master
 - git:
     local-name: velodyne
     uri: https://github.com/ros-drivers/velodyne.git
