@@ -10,7 +10,7 @@
   <param name="level_mux/default_current_level" value="3rdFloor" />
 
   <include file="$(find bwi_launch)/launch/includes/segbot.launch.xml">
-    <arg name="laser_max_range" value="40.0" />
+    <arg name="laser_max_range" value="20.0" />
     <arg name="localization_scan_topic" value="nav_hokuyo/scan" />
     <arg name="move_base_config" value="segbotv3" />
   </include>
