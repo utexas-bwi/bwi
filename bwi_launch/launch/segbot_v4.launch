@@ -1,4 +1,5 @@
 <launch>
+  <arg name="localization_scan_topic" default="hokuyo/scan"/>
 
   <!-- launch the multi map server for the world -->
   <arg name="multimap_file" default="$(find utexas_gdc)/maps/real/multimap/multimap.yaml" />
@@ -11,11 +12,11 @@
 
   <include file="$(find bwi_launch)/launch/includes/segbot.launch.xml">
     <arg name="laser_max_range" value="20.0" />
-    <arg name="localization_scan_topic" value="nav_hokuyo/scan" />
-    <arg name="move_base_config" value="segbotv3" />
+    <arg name="localization_scan_topic" value="$(arg localization_scan_topic)" />
+    <arg name="move_base_config" value="segbotv4" />
   </include>
 
-  <include file="$(find segbot_bringup)/launch/segbot_v4.launch" />
+  <include file="$(find segbot_bringup)/launch/segbot_v4.launch"/>
 
   <include file="$(find bwi_logging)/launch/record.launch" />
 
