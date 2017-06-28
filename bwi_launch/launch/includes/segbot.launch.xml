@@ -47,4 +47,11 @@
   <!-- launch the segbot gui -->
   <node name="gui" type="question_dialog_plugin" pkg="segbot_gui" />
 
+  <include file="$(find bwi_kr_execution)/launch/bwi_kr_execution.launch">
+    <arg name="domain" value="$(find bwi_kr_execution)/domain/" />
+    <arg name="simulation" value="false" />
+  </include>
+
+
+
 </launch>
