@@ -27,7 +27,11 @@ The Hydro version is now *deprecated*. It may work, but is no longer actively
 maintained.
 
 First, [install ROS Hydro](http://wiki.ros.org/hydro/Installation/Ubuntu), 
-or [Indigo](http://wiki.ros.org/indigo/Installation/Ubuntu).
+[Indigo](http://wiki.ros.org/indigo/Installation/Ubuntu), or
+[Kinetic](http://wiki.ros.org/indigo/Installation/Ubuntu).
+
+The Kinetic version is only supported on Ubuntu Xenial, and is
+probably not fully functional, yet.
 
 Then, make sure the ROS_DISTRO environment variable is set correctly:
 
