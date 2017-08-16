@@ -9,10 +9,10 @@
     local-name: segbot
     uri: https://github.com/utexas-bwi/segbot.git
     version: joq/kinetic
-- git:
-    local-name: segway_rmp
-    uri: https://github.com/utexas-bwi/segway_rmp.git
-    version: piyushk/remove_zero_odom_values
+# - git:
+#     local-name: segway_rmp
+#     uri: https://github.com/utexas-bwi/segway_rmp.git
+#     version: piyushk/remove_zero_odom_values
 - git:
     local-name: segway_v3
     uri: https://github.com/utexas-bwi/segway_v3.git
