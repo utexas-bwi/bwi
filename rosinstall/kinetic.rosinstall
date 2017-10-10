@@ -17,7 +17,7 @@
     local-name: segway_v3
     uri: https://github.com/utexas-bwi/segway_v3.git
     version: master
-# - git:
-#     local-name: velodyne
-#     uri: https://github.com/ros-drivers/velodyne.git
-#     version: master
+- git:
+    local-name: velodyne
+    uri: https://github.com/ros-drivers/velodyne.git
+    version: master
