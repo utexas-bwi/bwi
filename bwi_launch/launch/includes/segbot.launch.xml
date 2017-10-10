@@ -3,13 +3,15 @@
   <arg name="laser_max_range" default="4.0" />
   <arg name="localization_scan_topic" default="scan_filtered" />
   <arg name="move_base_config" default="segbotv2" />
+  <arg name="rviz" default="true" />
+  <arg name="gui" default="false" />
 
   <!-- also launch the level multiplexer and the level selector -->
   <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
     <param name="global_frame_id" value="level_mux/map" />
   </node>
 
-  <node name="level_selector" pkg="multi_level_map_utils" type="level_selector" />
+  <node name="level_selector" pkg="multi_level_map_utils" type="level_selector" if="$(arg gui)"/>
 
   <!-- launch the interruptable action server -->
   <node name="move_base_interruptable" pkg="segbot_navigation" type="move_base_interruptable_server" />
@@ -42,10 +44,10 @@
   </node>
 
   <!-- launch vizualization -->
-  <node name="rviz" type="rviz_runner" pkg="segbot_navigation" />
+  <node name="rviz" type="rviz_runner" pkg="segbot_navigation" if="$(arg rviz)" />
 
   <!-- launch the segbot gui -->
-  <node name="gui" type="question_dialog_plugin" pkg="segbot_gui" />
+  <node name="gui" type="question_dialog_plugin" pkg="segbot_gui" if="$(arg gui)" />
 
   <include file="$(find bwi_kr_execution)/launch/bwi_kr_execution.launch">
     <arg name="domain" value="$(find bwi_kr_execution)/domain/" />
