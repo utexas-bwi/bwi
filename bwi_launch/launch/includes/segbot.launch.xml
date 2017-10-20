@@ -4,8 +4,7 @@
   <arg name="localization_scan_topic" default="scan_filtered" />
   <arg name="move_base_config" default="segbotv2" />
   <arg name="rviz" default="true" />
-  <arg name="gui" default="false" />
-
+  <arg name="gui" default="true" />
   <!-- also launch the level multiplexer and the level selector -->
   <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
     <param name="global_frame_id" value="level_mux/map" />
@@ -48,8 +47,8 @@
 
   <!-- launch the segbot gui -->
   <node name="gui" type="question_dialog_plugin" pkg="segbot_gui" if="$(arg gui)" />
-
-  <include file="$(find bwi_kr_execution)/launch/bwi_kr_execution.launch">
+  
+<include file="$(find bwi_kr_execution)/launch/bwi_kr_execution.launch">
     <arg name="domain" value="$(find bwi_kr_execution)/domain/" />
     <arg name="simulation" value="false" />
   </include>
