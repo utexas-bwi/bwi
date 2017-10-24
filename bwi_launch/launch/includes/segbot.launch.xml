@@ -46,7 +46,7 @@
 
   <!-- launch the question dialog gui -->
   <!--
-  <node name="gui" type="question_dialog_plugin" pkg="segbot_gui" />
+  <node name="gui" type="question_dialog_plugin" pkg="bwi_rqt_plugins" />
   -->
 
   <include file="$(find bwi_kr_execution)/launch/bwi_kr_execution.launch">
