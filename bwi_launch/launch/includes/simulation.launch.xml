@@ -10,7 +10,7 @@
 
   <!-- also launch the level multiplexer and the level selector -->
   <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
-    <param name="global_frame_id" value="level_mux/map" />
+    <param name="global_frame_id" value="level_mux_map" />
   </node>
 
   <node name="level_selector" pkg="multi_level_map_utils" type="level_selector" />
@@ -25,7 +25,7 @@
     <arg name="y" value="$(arg y)" />
     <arg name="yaw" value="$(arg yaw)" />
     <arg name="robotid" value="segbot" />
-    <arg name="map_frame" value="level_mux/map" />
+    <arg name="map_frame" value="level_mux_map" />
     <arg name="map_service" value="level_mux/static_map" />
     <arg name="map_topic" value="level_mux/map" />
     <arg name="navigation_map_topic" value="segbot_logical_navigator/map" />
@@ -40,7 +40,7 @@
 
   <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
   <node name="segbot_logical_navigator" pkg="segbot_logical_translator" type="segbot_logical_navigator">
-    <param name="global_frame_id" value="level_mux/map" />
+    <param name="global_frame_id" value="level_mux_map" />
     <remap from="move_base" to="move_base_interruptable" />
   </node>
 
