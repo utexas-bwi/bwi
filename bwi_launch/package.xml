@@ -21,13 +21,13 @@
   <exec_depend>bwi_kr_execution</exec_depend>
   <exec_depend>bwi_logging</exec_depend>
   <exec_depend>bwi_msgs</exec_depend>
+  <exec_depend>bwi_rqt_plugins</exec_depend>
   <exec_depend>bwi_tools</exec_depend>
   <exec_depend>bwi_virtour</exec_depend>
   <exec_depend>multi_level_map_server</exec_depend>
   <exec_depend>multi_level_map_utils</exec_depend>
   <exec_depend>segbot_bringup</exec_depend>
   <exec_depend>segbot_gazebo</exec_depend>
-  <exec_depend>segbot_gui</exec_depend>
   <exec_depend>segbot_logical_translator</exec_depend>
   <exec_depend>segbot_navigation</exec_depend>
   <exec_depend>segbot_simulation_apps</exec_depend>

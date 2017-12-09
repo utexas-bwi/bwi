@@ -1,6 +1,7 @@
 - git:
     local-name: bwi
     uri: https://github.com/utexas-bwi/bwi.git
+    version: kinetic
 - git:
     local-name: bwi_common
     uri: https://github.com/utexas-bwi/bwi_common.git
