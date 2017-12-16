@@ -28,7 +28,7 @@ First, install ROS
 [Kinetic](http://wiki.ros.org/indigo/Installation/Ubuntu).
 
 The Kinetic version is only supported on Ubuntu Xenial, and is
-not fully functional, yet.
+only partially functional.
 
 Then, make sure the ROS_DISTRO environment variable is set correctly:
 
@@ -57,6 +57,7 @@ $ wstool init src https://raw.githubusercontent.com/utexas-bwi/bwi/master/rosins
 
 Install all dependencies:
 ```
+$ rosdep update
 $ rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
@@ -66,11 +67,10 @@ $ catkin build
 $ source devel/setup.bash
 ```
 
-Note that the **catkin build** command from the **catkin_tools**
+Note that the **catkin build** command from the **python-catkin-tools**
 package is *required* for building on ROS Kinetic.  On ROS Indigo, you
 can still use **catkin_make** instead, although the newer build tool
-is recommended. If it's missing from your system, apt-get install the
-**python-catkin-tools** package.
+is recommended.
 
 ### For Version 3 Robot
 
