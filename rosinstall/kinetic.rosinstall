@@ -10,9 +10,6 @@
     local-name: camera1394
     uri: https://github.com/ros-drivers/camera1394.git
 - git:
-    local-name: driver_common
-    uri: https://github.com/ros-drivers/driver_common.git
-- git:
     local-name: libsegwayrmp
     uri: https://github.com/utexas-bwi/libsegwayrmp.git
 - git:
@@ -26,6 +23,3 @@
     local-name: segway_v3
     uri: https://github.com/utexas-bwi/segway_v3.git
     version: master
-- git:
-    local-name: velodyne
-    uri: https://github.com/ros-drivers/velodyne.git
