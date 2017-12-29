@@ -7,9 +7,6 @@
     uri: https://github.com/utexas-bwi/bwi_common.git
     version: kinetic
 - git:
-    local-name: camera1394
-    uri: https://github.com/ros-drivers/camera1394.git
-- git:
     local-name: libsegwayrmp
     uri: https://github.com/utexas-bwi/libsegwayrmp.git
 - git:
