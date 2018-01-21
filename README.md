@@ -21,17 +21,14 @@ From top to bottom, the released repositories are:
 ### From Source
 
 You can install all the BWI components normally built from source on
-either ROS Hydro or Indigo.
+either ROS Indigo or Kinetic.
 
-The Hydro version is now *deprecated*. It may work, but is no longer actively 
-maintained.
-
-First, [install ROS Hydro](http://wiki.ros.org/hydro/Installation/Ubuntu), 
+First, install ROS
 [Indigo](http://wiki.ros.org/indigo/Installation/Ubuntu), or
 [Kinetic](http://wiki.ros.org/indigo/Installation/Ubuntu).
 
 The Kinetic version is only supported on Ubuntu Xenial, and is
-probably not fully functional, yet.
+only partially functional.
 
 Then, make sure the ROS_DISTRO environment variable is set correctly:
 
@@ -43,11 +40,11 @@ It may already be.  If not, issue the appropriate one of these two
 shell commands:
 
 ```
-$ export ROS_DISTRO=hydro
+$ export ROS_DISTRO=indigo
 ```
 or
 ```
-$ export ROS_DISTRO=indigo
+$ export ROS_DISTRO=kinetic
 ```
 
 Next, clone the source repositories:
@@ -60,14 +57,20 @@ $ wstool init src https://raw.githubusercontent.com/utexas-bwi/bwi/master/rosins
 
 Install all dependencies:
 ```
+$ rosdep update
 $ rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
 Then, build everything:
 ```
-$ catkin_make
+$ catkin build
 $ source devel/setup.bash
 ```
+
+Note that the **catkin build** command from the **python-catkin-tools**
+package is *required* for building on ROS Kinetic.  On ROS Indigo, you
+can still use **catkin_make** instead, although the newer build tool
+is recommended.
 
 ### For Version 3 Robot
 
@@ -75,12 +78,3 @@ To use this code on the Version 3 Segway Robot, one must also define
 some enviroment variables.  The steps for doing this and the specific
 environment variables are described on the project wiki.  Eventually,
 that should no longer be necessary.
-
-### From Binary Packages
-
-You may install the latest binary release, when available, from the
-ROS package repository.  These will not usually be the latest versions:
-
-```
-$ sudo apt-get install ros-$ROS_DISTRO-bwi-desktop-full
-```

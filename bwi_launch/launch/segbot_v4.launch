@@ -1,5 +1,5 @@
 <launch>
-  <arg name="localization_scan_topic" default="hokuyo/scan"/>
+  <arg name="localization_scan_topic" default="scan_filtered"/>
 
   <!-- launch the multi map server for the world -->
   <arg name="multimap_file" default="$(find utexas_gdc)/maps/real/multimap/multimap.yaml" />
