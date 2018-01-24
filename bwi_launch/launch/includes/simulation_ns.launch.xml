@@ -36,7 +36,7 @@
       <arg name="map_frame" value="level_mux_map" />
       <arg name="map_service" value="level_mux/static_map" />
       <arg name="map_topic" value="level_mux/map" />
-      <arg name="navigation_map_topic" value="segbot_logical_navigator/map" />
+      <arg name="navigation_map_topic" value="bwi_logical_navigator/map" />
       <arg name="launch_localization" value="true" />
       <arg name="localization_scan_topic" default="$(arg localization_scan_topic)" />
       <arg name="use_fake_localization" value="false" />
@@ -46,8 +46,8 @@
       <arg name="use_full_gazebo_model" value="false" />
     </include>
 
-    <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
-    <node name="segbot_logical_navigator" pkg="segbot_logical_translator" type="segbot_logical_navigator">
+    <!-- Finally, launch the bwi_logical_navigator to do low-level logical navigation. -->
+    <node name="bwi_logical_navigator" pkg="bwi_logical_translator" type="bwi_logical_navigator">
       <param name="global_frame_id" value="$(arg ns)/level_mux_map" />
       <remap from="move_base" to="move_base_interruptable" />
       <remap from="map_metadata" to="/map_metadata" />
