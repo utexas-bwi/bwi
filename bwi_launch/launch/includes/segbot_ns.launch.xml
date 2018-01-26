@@ -3,7 +3,8 @@
   <arg name="ns" />
   <arg name="laser_max_range" default="4.0" />
   <arg name="move_base_config" default="segbotv2" />
-
+  <arg name="rviz" default="true" />
+  <arg name="gui" defaul="true" />
   <group ns="$(arg ns)">
 
     <!-- also launch the level multiplexer and the level selector -->
@@ -46,11 +47,11 @@
     </node>
 
     <!-- launch vizualization -->
-    <node name="rviz" type="rviz_runner" pkg="segbot_navigation" args="ns $(arg ns)" />
+    <node name="rviz" type="rviz_runner" pkg="segbot_navigation" args="ns $(arg ns)" if="$(arg rviz)"/>
 
     <!-- launch the question dialog gui -->
     <!--
-    <node name="gui" type="question_dialog_plugin" pkg="bwi_rqt_plugins" />
+    <node name="gui" type="question_dialog_plugin" pkg="bwi_rqt_plugins" if="$(arg gui)"/>
     -->
 
   </group>

@@ -1,9 +1,9 @@
 <launch>
 
+  <arg name="rviz" default="true" />
+  <arg name="gui" default="true" />
   <arg name="multimap_file" default="$(find utexas_gdc)/maps/real/multimap/multimap.yaml" />
-  <arg name="rviz" default="true"/>
-  <arg name="gui" default="true"/>
-
+  
   <!-- launch the multi map server for the world -->
   <node name="multi_level_map_server" pkg="multi_level_map_server" type="multi_level_map_server">
     <param name="map_file" value="$(arg multimap_file)" />
@@ -13,12 +13,15 @@
   <param name="level_mux/default_current_level" value="3rdFloor" />
 
   <include file="$(find bwi_launch)/launch/includes/segbot.launch.xml">
+    <arg name="laser_max_range" value="20.0" />
     <arg name="rviz" value="$(arg rviz)" />
     <arg name="gui" value="$(arg gui)" />
   </include>
 
-  <include file="$(find segbot_bringup)/launch/segbot_v1.launch">
+  <include file="$(find segbot_bringup)/launch/segbot_v2.arm.launch">
     <arg name="gui" value="$(arg gui)" />
   </include>
+
+  <include file="$(find bwi_logging)/launch/record.launch" />
 
 </launch>
