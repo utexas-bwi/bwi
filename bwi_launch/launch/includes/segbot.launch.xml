@@ -29,14 +29,14 @@
   </include>
 
   <include file="$(find segbot_navigation)/launch/move_base_eband.launch">
-    <arg name="map_topic" value="segbot_logical_navigator/map" />
+    <arg name="map_topic" value="bwi_logical_navigator/map" />
     <arg name="move_base_server" value="move_base_interruptable" />
     <arg name="global_frame" value="level_mux_map" />
     <arg name="config" default="$(arg move_base_config)" />
   </include>
 
-  <!-- Finally, launch the segbot_logical_navigator to do low-level logical navigation. -->
-  <node name="segbot_logical_navigator" pkg="segbot_logical_translator" type="segbot_logical_navigator">
+  <!-- Finally, launch the bwi_logical_navigator to do low-level logical navigation. -->
+  <node name="bwi_logical_navigator" pkg="bwi_logical_translator" type="bwi_logical_navigator">
     <param name="global_frame_id" value="level_mux_map" />
     <remap from="move_base" to="move_base_interruptable" />
   </node>
