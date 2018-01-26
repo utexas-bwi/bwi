@@ -46,9 +46,7 @@
   <node name="rviz" type="rviz_runner" pkg="segbot_navigation" if="$(arg rviz)" />
 
   <!-- launch the question dialog gui -->
-  <!--
   <node name="gui" type="question_dialog_plugin" pkg="bwi_rqt_plugins" if="$(arg gui)" />
-  -->
 
   <include file="$(find bwi_kr_execution)/launch/bwi_kr_execution.launch">
     <arg name="domain" value="$(find bwi_kr_execution)/domain/" />
