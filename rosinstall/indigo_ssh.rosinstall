@@ -1,15 +1,15 @@
 - git:
     local-name: bwi
     uri: git@github.com:utexas-bwi/bwi.git
-    version: master
+    version: indigo
 - git:
     local-name: bwi_common
     uri: git@github.com:utexas-bwi/bwi_common.git
-    version: master
+    version: indigo
 - git:
     local-name: segbot
     uri: git@github.com:utexas-bwi/segbot.git
-    version: master
+    version: indigo
 - git:
     local-name: segway_rmp
     uri: git@github.com:utexas-bwi/segway_rmp.git
@@ -18,8 +18,3 @@
     local-name: segway_v3
     uri: git@github.com:utexas-bwi/segway_v3.git
     version: master
-- git:
-    local-name: velodyne
-    uri: git@github.com:ros-drivers/velodyne.git
-    version: master
- 
