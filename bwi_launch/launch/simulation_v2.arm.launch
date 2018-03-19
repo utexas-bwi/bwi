@@ -1,0 +1,17 @@
+<launch>
+
+    <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml" />
+    <arg name="x" default="15.0" />
+    <arg name="y" default="110.0" />
+    <arg name="yaw" default="0" />
+
+  <include file="$(find bwi_launch)/launch/simulation_v2.launch">
+        <arg name="multimap_file" value="$(arg multimap_file)" />
+        <arg name="use_arm" value="true" />
+        <arg name="use_perception" value="true" />
+        <arg name="x" value="$(arg x)" />
+        <arg name="y" value="$(arg y)" />
+        <arg name="yaw" value="$(arg yaw)" />
+  </include>
+
+</launch>
