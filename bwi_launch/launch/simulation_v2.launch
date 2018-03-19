@@ -4,13 +4,24 @@
   <arg name="x" default="15.0" />
   <arg name="y" default="110.0" />
   <arg name="yaw" default="0" />
+  <arg name="use_arm" default="false" />
+  <arg name="use_perception" default="false" />
+
 
   <include file="$(find bwi_launch)/launch/includes/simulation.launch.xml" >
-    <arg name="multimap_file" value="$(arg multimap_file)" />
+    <arg name="multimap_file" value="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml" />
   </include>
 
   <!-- launch robot description and robot internal tf tree, along with any common nodes between h/w and software-->
-  <include file="$(find segbot_bringup)/launch/includes/auxiliary.segbot_v3.launch.xml" />
+  <include file="$(find segbot_bringup)/launch/includes/auxiliary.segbot_v2.launch.xml">
+    <arg name="use_full_gazebo_model" value="false" />
+    <arg name="tf_prefix" value="" />
+    <arg name="use_nav_kinect" value="true" />
+    <arg name="use_arm" value="$(arg use_arm)" />
+    <arg name="use_perception" value="$(arg use_perception)" />
+    <arg name="urdf_file" value="$(find segbot_description)/robots/segbot_v2.arm.urdf.xacro" if="$(arg use_arm)" />
+    <arg name="urdf_file" value="$(find segbot_description)/robots/segbot_v2.urdf.xacro" unless="$(arg use_arm)" />
+  </include>
 
 
   <include file="$(find segbot_gazebo)/launch/segbot_mobile_base.launch">
@@ -23,12 +34,15 @@
     <arg name="map_topic" value="level_mux/map" />
     <arg name="navigation_map_topic" value="bwi_logical_navigator/map" />
     <arg name="launch_localization" value="true" />
-    <arg name="localization_scan_topic" value="velodyne/scan_filtered" />
+    <arg name="localization_scan_topic" default="scan_filtered" />
     <arg name="use_fake_localization" value="false" />
     <arg name="move_base_server" value="move_base_interruptable" />
-    <arg name="move_base_config" value="segbotv3" />
+    <arg name="move_base_config" value="segbotv2" />
     <arg name="launch_move_base" value="true" />
     <arg name="use_full_gazebo_model" value="false" />
   </include>
+
+    <param if="$(arg use_arm)" name="/m1n6s200_driver/robot_type" value="m1n6s200" />
+
 
 </launch>
