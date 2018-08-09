@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml" />
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/combined.yaml" />
   <arg name="x" default="15.0" />
   <arg name="y" default="110.0" />
   <arg name="yaw" default="0" />
@@ -9,7 +9,7 @@
 
 
   <include file="$(find bwi_launch)/launch/includes/simulation.launch.xml" >
-    <arg name="multimap_file" value="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml" />
+    <arg name="multimap_file" value="$(arg multimap_file)" />
   </include>
 
   <!-- launch robot description and robot internal tf tree, along with any common nodes between h/w and software-->

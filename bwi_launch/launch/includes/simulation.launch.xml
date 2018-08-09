@@ -1,5 +1,5 @@
 <launch>
-  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml"/>
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/combined.yaml"/>
 
   <!-- start the simulation environment -->
   <include file="$(find utexas_gdc)/launch/simulation_multimap.launch" />

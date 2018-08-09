@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml" />
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/combined.yaml" />
   <arg name="x" default="15.0" />
   <arg name="y" default="110.0" />
   <arg name="yaw" default="0" />
