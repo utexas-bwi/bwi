@@ -1,15 +1,16 @@
 <launch>
 
-  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml" />
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/f1tenth_sim/combined.yaml" />
   <arg name="x" default="15.0" />
   <arg name="y" default="110.0" />
   <arg name="yaw" default="0" />
   <arg name="use_arm" default="false" />
   <arg name="use_perception" default="false" />
-
+  <arg name="non_gazebo_sim" default="false" />
 
   <include file="$(find bwi_launch)/launch/includes/simulation.launch.xml" >
-    <arg name="multimap_file" value="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml" />
+    <arg name="multimap_file" value="$(arg multimap_file)"/>
+    <arg name="non_gazebo_sim" value="$(arg non_gazebo_sim)"/>
   </include>
 
   <!-- launch robot description and robot internal tf tree, along with any common nodes between h/w and software-->
@@ -29,6 +30,7 @@
     <arg name="y" value="$(arg y)" />
     <arg name="yaw" value="$(arg yaw)" />
     <arg name="robotid" value="segbot" />
+    <arg name="non_gazebo_sim" value="$(arg non_gazebo_sim)"/>
     <arg name="map_frame" value="level_mux_map" />
     <arg name="map_service" value="level_mux/static_map" />
     <arg name="map_topic" value="level_mux/map" />
