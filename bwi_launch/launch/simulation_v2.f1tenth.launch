@@ -1,0 +1,10 @@
+<launch>
+
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/f1tenth_sim/combined.yaml" />
+
+  <include file="$(find bwi_launch)/launch/simulation_v2.launch">
+    <arg name="multimap_file" value="$(arg multimap_file)"/>
+    <arg name="non_gazebo_sim" value="true"/>
+  </include>
+
+</launch>
