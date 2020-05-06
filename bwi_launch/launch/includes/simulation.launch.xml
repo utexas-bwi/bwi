@@ -1,5 +1,5 @@
 <launch>
-  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/f1tenth_sim/combined.yaml"/>
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/combined.yaml"/>
   <arg name="non_gazebo_sim" default="false"/>
 
   <!-- start the simulation environment -->
