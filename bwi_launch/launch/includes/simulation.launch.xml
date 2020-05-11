@@ -1,5 +1,5 @@
 <launch>
-  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/combined.yaml"/>
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml"/>
   <arg name="realistic_gazebo_sim" default="false"/>
   
 
