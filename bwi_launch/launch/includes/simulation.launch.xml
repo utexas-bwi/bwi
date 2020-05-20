@@ -1,16 +1,18 @@
 <launch>
-  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml"/>
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/combined.yaml"/>
   <arg name="realistic_gazebo_sim" default="false"/>
-  
+  <arg name="non_gazebo_sim" default="false"/>
 
   <!-- start the simulation environment -->
-  <group unless="$(arg realistic_gazebo_sim)">
-      <include file="$(find utexas_gdc)/launch/simulation_multimap.launch" />
-  </group>
-  <group if="$(arg realistic_gazebo_sim)">
-      <include file="$(find utexas_gdc)/launch/simulation_3ne.launch">
-        <arg name="realistic" value="true"/>
-      </include>
+  <group unless="$(arg non_gazebo_sim)">
+      <group unless="$(arg realistic_gazebo_sim)">
+          <include file="$(find utexas_gdc)/launch/simulation_multimap.launch" />
+      </group>
+      <group if="$(arg realistic_gazebo_sim)">
+          <include file="$(find utexas_gdc)/launch/simulation_3ne.launch">
+            <arg name="realistic" value="true"/>
+          </include>
+      </group>
   </group>
 
   <!-- launch the multi map server for the simulated world -->
@@ -22,10 +24,12 @@
   <param name="level_mux/default_current_level" value="3rdFloor" />
 
   <!-- Add simulation helpers for opening and closing doors, and teleporting the robot through elevators. --> 
-  <include file="$(find segbot_simulation_apps)/launch/door_handler.launch" />
-  <node name="robot_teleporter" pkg="segbot_simulation_apps" type="robot_teleporter">
-    <param name="robotid" value="segbot" />
-  </node>
+  <group unless="$(arg non_gazebo_sim)">
+      <include file="$(find segbot_simulation_apps)/launch/door_handler.launch" />
+      <node name="robot_teleporter" pkg="segbot_simulation_apps" type="robot_teleporter">
+        <param name="robotid" value="segbot" />
+      </node>
+  </group>
 
   <!-- also launch the level multiplexer and the level selector -->
   <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
