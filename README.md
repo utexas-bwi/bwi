@@ -40,11 +40,11 @@ It may already be.  If not, issue the appropriate one of these two
 shell commands:
 
 ```
-$ export ROS_DISTRO=indigo
+$ export ROS_DISTRO=kinetic
 ```
 or
 ```
-$ export ROS_DISTRO=kinetic
+$ export ROS_DISTRO=melodic
 ```
 
 Next, clone the source repositories:
@@ -63,12 +63,12 @@ $ rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 
 Then, build everything:
 ```
-$ catkin build
+$ catkin build --mem-limit 50%
 $ source devel/setup.bash
 ```
 
 Note that the **catkin build** command from the **python-catkin-tools**
-package is *required* for building on ROS Kinetic.  On ROS Indigo, you
+package is *required* for building on ROS Kinetic and Melodic. On ROS Indigo, you
 can still use **catkin_make** instead, although the newer build tool
 is recommended.
 
