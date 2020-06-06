@@ -1,5 +1,5 @@
 robots:
   - name: marvin
-    location: [22.5, 18.00, 3.141592]
+    location: [0.0, 8.00, 0.0]
   - name: roberto 
-    location: [12.5, 18.00, 0]
+    location: [0.0, 10.00, 0.0]
