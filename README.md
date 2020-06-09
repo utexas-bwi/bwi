@@ -61,11 +61,19 @@ $ rosdep update
 $ rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
-Then, build everything:
+Then, build everything. On a slow computer:
 ```
-$ catkin build --mem-limit 50%
+$ catkin build -j2 
 $ source devel/setup.bash
 ```
+
+Or on a fast computer:
+```
+$ catkin build -j6 
+$ source devel/setup.bash
+```
+Or you can adjust the job limit as you see fit.
+
 
 Note that the **catkin build** command from the **python-catkin-tools**
 package is *required* for building on ROS Kinetic and Melodic. On ROS Indigo, you
