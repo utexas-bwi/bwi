@@ -9,7 +9,7 @@
 - git:
     local-name: bwi_common
     uri: https://github.com/utexas-bwi/bwi_common.git
-    version: devel
+    version: master
 - git:
     local-name: camera1394
     uri: https://github.com/ros-drivers/camera1394
@@ -25,15 +25,15 @@
 - git:
     local-name: libsegwayrmp
     uri: https://github.com/utexas-bwi/libsegwayrmp.git
-    version: cpp11
+    version: master
 - git:
     local-name: segbot
     uri: https://github.com/utexas-bwi/segbot.git
-    version: melodic-devel
+    version: master
 - git:
     local-name: segway_rmp
     uri: https://github.com/utexas-bwi/segway_rmp.git
-    version: melodic-devel
+    version: master
 - git:
     local-name: segway_v3
     uri: https://github.com/utexas-bwi/segway_v3.git
