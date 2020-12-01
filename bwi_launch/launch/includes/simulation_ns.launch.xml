@@ -1,6 +1,7 @@
 <launch>
 
   <arg name="ns" />
+  <arg name="rviz" default="true" />
 
   <arg name="x" default="0" />
   <arg name="y" default="0" />
@@ -20,10 +21,12 @@
       <remap from="map_metadata" to="/map_metadata" />
     </node>
 
-    <node name="level_selector" pkg="multi_level_map_utils" type="level_selector">
-      <remap from="map_metadata" to="/map_metadata" />
-    </node>
-
+    <group if="$(arg rviz)">
+      <node name="level_selector" pkg="multi_level_map_utils" type="level_selector">
+        <remap from="map_metadata" to="/map_metadata" />
+      </node>
+    </group>
+    
     <!-- launch the interruptable action server -->
     <node name="move_base_interruptable" pkg="segbot_navigation" type="move_base_interruptable_server" />
     <node name="move_base_interruptable_simple" pkg="segbot_navigation" type="move_base_interruptable_simple" />
@@ -68,8 +71,10 @@
     </node>
 
     <!-- launch vizualization -->
-    <node name="rviz" type="rviz_runner" pkg="segbot_navigation" args="ns $(arg ns)" />
-
+    <group if="$(arg rviz)">
+      <node name="rviz" type="rviz_runner" pkg="segbot_navigation" args="ns $(arg ns)" />
+    </group>
+    
     <!-- launch the question dialog gui -->
     <!--
     <node name="gui" type="question_dialog_plugin" pkg="bwi_rqt_plugins" />
