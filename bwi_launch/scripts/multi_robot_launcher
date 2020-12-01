@@ -7,7 +7,7 @@ import tempfile
 from bwi_msgs.msg import AvailableRobot, AvailableRobotArray
 from bwi_tools import start_roslaunch_process, stop_roslaunch_process
 
-def construct_launch_file(fd, launch_file, config, msg):
+def construct_launch_file(fd, launch_file, config, msg, rviz="true"):
     msg.robots = []
     launch_file_str = "<launch>"
     for robot in config['robots']:
@@ -15,7 +15,7 @@ def construct_launch_file(fd, launch_file, config, msg):
         robot_x = robot['location'][0]
         robot_y = robot['location'][1]
         robot_yaw = robot['location'][2]
-        launch_file_str += '<include file="%s"><arg name="x" value="%f" /><arg name="y" value="%f" /><arg name="yaw" value="%f" /><arg name="ns" value="%s" /></include> '%(launch_file, robot_x, robot_y, robot_yaw, robot_name)
+        launch_file_str += '<include file="%s"><arg name="x" value="%f" /><arg name="y" value="%f" /><arg name="yaw" value="%f" /><arg name="ns" value="%s" /><arg name="rviz" value="%s" /></include> '%(launch_file, robot_x, robot_y, robot_yaw, robot_name, rviz)
         msg.robots.append(AvailableRobot(robot_name, AvailableRobot.SEGBOT))
     launch_file_str += '</launch>'
     fd.write(launch_file_str)
@@ -34,8 +34,9 @@ def robot_publisher():
         # Construct the launch file.
         msg = AvailableRobotArray()
         configuration = rospy.get_param('~configuration')
+        rviz = rospy.get_param('~rviz')
         launch_file = rospy.get_param('~launch_file', '$(find bwi_launch)/launch/includes/simulation_ns.launch.xml')
-        construct_launch_file(temp_launch_file, launch_file, configuration, msg)
+        construct_launch_file(temp_launch_file, launch_file, configuration, msg, rviz)
 
         temp_launch_file.close()
         start_roslaunch_process(None, temp_file_name)
