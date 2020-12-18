@@ -21,6 +21,9 @@
       <remap from="map_metadata" to="/map_metadata" />
     </node>
 
+    <!-- Set the default level we'd like this robot to start on -->
+    <param name="level_mux/default_current_level" value="level1" />
+    
     <group if="$(arg rviz)">
       <node name="level_selector" pkg="multi_level_map_utils" type="level_selector">
         <remap from="map_metadata" to="/map_metadata" />
