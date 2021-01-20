@@ -14,8 +14,8 @@ As a demonstration of the BWIbots' abilities to navigate a building, avoid visit
 
 ## For V2 Bots:
 ### Turn on the robot
-1. Every time you start working with the robot, you should disconnect it from charging at the wall:
-   - Find the cable leading from the charging brick to the robot and disconnect it. Please detach by holding the connectors only, and don't pull the connection apart using the wires as they may break off.
+1. Disconnect the charging cable.
+   - Find the cable leading from the wall-powered charging brick to the robot main power box and disconnect it. Detach by holding the connectors only, and don't pull the connection apart using the wires as they may break off.
 **Before leaving the lab, ensure that you put the robot back on charging**
 
 2.  Change the battery mode from "Charging" to "Battery":
