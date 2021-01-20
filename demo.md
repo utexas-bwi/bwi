@@ -14,23 +14,23 @@ As a demonstration of the BWIbots' abilities to navigate a building, avoid visit
 
 ## For V2 Bots:
 ### Turn on the robot
-1. Every time you start working with the robot, you should disconnect it from charging at the wall. Find the cable leading from the charging brick to the robot and disconnect it. Please detach by holding the connectors only, and don't pull the connection apart using the wires as they may break off.
+1. Every time you start working with the robot, you should disconnect it from charging at the wall:
+   - Find the cable leading from the charging brick to the robot and disconnect it. Please detach by holding the connectors only, and don't pull the connection apart using the wires as they may break off.
 **Before leaving the lab, ensure that you put the robot back on charging**
 
 2.  Change the battery mode from "Charging" to "Battery":
-- Find the panel on the robot. There is a large, three-position flip switch with the two extreme positions labeled "Charger" and "Battery". Flip from charger all the way to battery. The middle position has no specific function.
+    - Find the panel on the robot. There is a large, three-position flip switch with the two extreme positions labeled "Charger" and "Battery". Flip from charger all the way to battery. The middle position has no specific function.
 
-3.  Turn the laptop on:
--Open up the laptop lid, and press the power button. Use the appropriate user/pass to log onto the machine.
+3.  Turn the laptop on.  Use the appropriate user/pass to log onto the machine.
 
 4.  Now turn the Segway base on:
-- Locate the power buttons underneath the bottom of the Segway base. First press the **GREEN** button to power the segway base and wait 2 s. before the next step.
-- If you wish to move the robot manually, you could do so now.  The next step will turn power on to the motors, at which point you should NOT try to manually move the robot.
-- To power the segway base motors: Press the **YELLOW** button. You'll hear an audible beep and the blue light will turn on. While the segway motors and processors are on, do not move the robots manually!
+    - Locate the power buttons underneath the bottom of the Segway base. First press the **GREEN** button to power the segway base and wait 2 s. before the next step.
+    - If you wish to move the robot manually, you could do so now.  The next step will turn power on to the motors, at which point you should NOT try to manually move the robot.
+    - To power the segway base motors: Press the **YELLOW** button. You'll hear an audible beep and the blue light will turn on. While the segway motors and processors are on, do not move the robots manually!
 
 You should now be able to operate the robot using the laptop.
 
-If the base beeps or shakes, the internal base battery is too low.  Allow the robot to sit with the base OFF and the main power ON (swithed to "battery") for 5 min., then try step 4 again.
+Note: If the base beeps or shakes, the internal base battery is too low.  Allow the robot to sit with the base OFF and the main power ON (swithed to "battery") for 5 min., then try step 4 again.
 
 ### Move the robot to starting position
 You will use the computer keyboard to control the robot, but first you must run the segbot launch file.  In a terminal window, type:
@@ -70,11 +70,8 @@ The robot will begin visiting doors on the floor.  To stop the program, type "ct
 ## For V4 Bots:
 ### Turn on the robot
 1. Disconnect the battery from the wall charger: the V4 bot charger cable is connected to the back of the robot base via a serial connector.  Make sure the screws on the connector are loose before disconnecting.
-
 2. Verify that the e-stop (red button located on the power box in the mid-section of the robot) is disengaged (pulled all the way up).
-
 3. Press the small metal button on the power box. The base should turn on and the power button will illuminate.
-
 4. Verify that the 3-position switch next to the power button is in the Neutral position (DIAG - NEUTRAL - BL).
 
 You should now be able to use the robot.
