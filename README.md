@@ -80,9 +80,21 @@ package is *required* for building on ROS Kinetic and Melodic. On ROS Indigo, yo
 can still use **catkin_make** instead, although the newer build tool
 is recommended.
 
-### For Version 3 Robot
+### For Version 4 Robot
 
-To use this code on the Version 3 Segway Robot, one must also define
-some enviroment variables.  The steps for doing this and the specific
-environment variables are described on the project wiki.  Eventually,
-that should no longer be necessary.
+The V4 base uses slightly different values for some environment variables. It's important to export them into your environment after you source the workspace. Add the convenience function sws to the bottom of your .bashrc file found at ~/.bashrc.
+```
+sws() {
+  source ~/catkin_ws/devel/setup.bash
+  export SEGWAY_INTERFACE_ADDRESS=10.66.171.1
+  export SEGWAY_IP_ADDRESS=10.66.171.5
+  export SEGWAY_IP_PORT_NUM=8080
+  export SEGWAY_BASE_PLATFORM=RMP_110
+  export SEGWAY_PLATFORM_NAME=RMP_110
+}
+sws
+```
+After building your workspace or packages, instead of using "source /devel/setup.bash" , simply call the function above by typing:
+```
+sws
+```
