@@ -96,5 +96,5 @@ sws
 ```
 After building your workspace or packages, instead of using "source /devel/setup.bash" , simply call the function above by typing:
 ```
-sws
+$ sws
 ```
