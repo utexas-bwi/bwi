@@ -21,12 +21,12 @@ From top to bottom, the released repositories are:
 ### From Source
 
 You can install all the BWI components normally built from source on
-either ROS Indigo or Kinetic.
+either ROS Indigo, Kinetic, or Melodic.  For the V4 bots, use Melodic.
 
 First, install ROS
-[Indigo](http://wiki.ros.org/indigo/Installation/Ubuntu), or
-[Kinetic](http://wiki.ros.org/indigo/Installation/Ubuntu).
-
+[Indigo](http://wiki.ros.org/indigo/Installation/Ubuntu),
+[Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu), or
+[Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu).
 The Kinetic version is only supported on Ubuntu Xenial, and is
 only partially functional.
 
@@ -61,6 +61,10 @@ $ rosdep update
 $ rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
+
+**If you are setting up a workspace on a BWIbot V4 in Anna Hiss Gym, continue from here with the "Special Installation Instructions for Version 4 Robots" below.**
+
+
 Then, build everything. On a slow computer:
 ```
 $ catkin build -j2 
@@ -80,9 +84,26 @@ package is *required* for building on ROS Kinetic and Melodic. On ROS Indigo, yo
 can still use **catkin_make** instead, although the newer build tool
 is recommended.
 
-### For Version 4 Robot
 
-The V4 base uses slightly different values for some environment variables. It's important to export them into your environment after you source the workspace. Add the convenience function sws to the bottom of your .bashrc file found at ~/.bashrc.
+## Special Installation Instructions for Version 4 Robots:
+
+The V4 bots at AHG use some additional branches of the utexas-bwi repo.  To install these, run the following commands from your ~/catkin_ws directory:
+
+```
+$ git checkout https://github.com/utexas-bwi/bwi/tree/architecture-update
+$ git checkout https://github.com/utexas-bwi/bwi_common/tree/architecture-update
+$ git checkout https://github.com/utexas-bwi/ahg_common/tree/ahg2s_map
+
+$ git submodule init
+$ git submodule update
+```
+
+Then build everything:
+```
+$ catkin build -j6
+```
+
+The V4 base uses slightly different values for some environment variables. It's important to export them into your environment after sourcing the workspace. To automate that, add the convenience function "sws" to the bottom of your .bashrc file found at ~/.bashrc.
 ```
 sws() {
   source ~/catkin_ws/devel/setup.bash
@@ -98,3 +119,20 @@ After building your workspace or packages, instead of using "source devel/setup.
 ```
 $ sws
 ```
+
+Next, update pyYAML:
+```
+$ pip install -U pyYAML
+```
+
+Then you will need to create a password for postgres.  To do so, run the script below and follow the promts to enter a password that is not empty:
+```
+$ run bwi_common/knowledge_representation/scripts/configure_postgresql.sh
+```
+
+Finally, run the command prepare_knowledge_bwi_ahg:
+```
+$ prepare_knowledge_bwi_ahg
+```
+
+At this point, you should be able to run the BWIbot V4 visit doors demo in Anna Hiss Gym.  See the [demo instructions](https://github.com/utexas-bwi/bwi/blob/master/demo_v4.md) in this directory.
