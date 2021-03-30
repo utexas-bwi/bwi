@@ -38,8 +38,3 @@
     local-name: segway_v3
     uri: https://github.com/utexas-bwi/segway_v3.git
     version: melodic-devel
-- git:
-    local-name: azure_kinect_ros
-    uri: https://github.com/microsoft/Azure_Kinect_ROS_Driver
-    version: melodic
-
