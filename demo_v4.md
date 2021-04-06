@@ -49,9 +49,9 @@ rosrun bwi_tasks visit_door_list_smach
 ```
 The robot will begin visiting doors on the floor.  To stop the program, type "ctrl+C", but note that the robot will continue to its next goal door before stopping.
 
->*If you see errors about packages for the robot arm, you must ignore the bad packages by typing:*
+>*If you see errors about packages for the robot arm, you must ignore the bad packages by putting a file called "CATKIN_IGNORE" in the package directory(ies).  This will remove functionality of these packages.  Please contact Max Svetlik or Corrie Van Sice (github name: CorrieVS) if this occurs:*
 >```
->CATKIN_IGNORE (bad packages)
+>touch ~/catkin_ws/src/.../bad_package_directory/CATKIN_IGNORE
 >```
 >*Then build and source the workspace:*
 >```
