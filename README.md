@@ -90,8 +90,6 @@ is recommended.
 The V4 bots at AHG use some additional branches of the utexas-bwi repo.  To install these, run the following commands from your ~/catkin_ws directory (they will change directories):
 
 ```
-$ cd src/bwi && git fetch && git checkout architecture-update
-
 $ cd ../bwi_common && git fetch && git checkout architecture-update
 $ git submodule init
 $ git submodule update
