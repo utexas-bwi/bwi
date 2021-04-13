@@ -129,7 +129,7 @@ $ pip install -U pyYAML
 
 Then you will need to create a password for postgres.  To do so, run the script below and follow the promts to enter a password that is not empty:
 ```
-$ run bwi_common/knowledge_representation/scripts/configure_postgresql.sh
+$ ./src/bwi_common/knowledge_representation/scripts/configure_postgresql.sh
 ```
 
 Finally, run the command prepare_knowledge_bwi_ahg:
