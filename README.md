@@ -87,19 +87,21 @@ is recommended.
 
 ## Special Installation Instructions for Version 4 Robots:
 
-The V4 bots at AHG use some additional branches of the utexas-bwi repo.  To install these, run the following commands from your ~/catkin_ws directory:
+The V4 bots at AHG use some additional branches of the utexas-bwi repo.  To install these, run the following commands from your ~/catkin_ws directory (they will change directories):
 
 ```
-$ git checkout https://github.com/utexas-bwi/bwi/tree/architecture-update
-$ git checkout https://github.com/utexas-bwi/bwi_common/tree/architecture-update
-$ git checkout https://github.com/utexas-bwi/ahg_common/tree/ahg2s_map
+$ cd src/bwi && git fetch && git checkoutarchitecture-update
 
+$ cd ../bwi_common && git fetch && git checkout architecture-update
 $ git submodule init
 $ git submodule update
+
+$ cd ../ && git clone --branch ahg2s_map https://github.com/utexas-bwi/ahg_common.git
 ```
 
-Then build everything:
+Then build everything from the ~/catkin_ws directory:
 ```
+$ cd ~/catkin_ws
 $ catkin build -j6
 ```
 
