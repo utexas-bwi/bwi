@@ -90,7 +90,7 @@ is recommended.
 The V4 bots at AHG use some additional branches of the utexas-bwi repo.  To install these, run the following commands from your ~/catkin_ws directory (they will change directories):
 
 ```
-$ roscd bwi_common && git fetch && git checkout architecture-update
+$ cd ~/catkin_ws/src/bwi_common
 $ git submodule init
 $ git submodule update
 
@@ -128,11 +128,6 @@ $ pip install -U pyYAML
 Then you will need to create a password for postgres.  To do so, run the script below and follow the promts to enter a password that is not empty:
 ```
 $ ./src/bwi_common/knowledge_representation/scripts/configure_postgresql.sh
-```
-
-Finally, run the command prepare_knowledge_bwi_ahg:
-```
-$ prepare_knowledge_bwi_ahg
 ```
 
 At this point, you should be able to run the BWIbot V4 visit doors demo in Anna Hiss Gym.  See the [demo instructions](https://github.com/utexas-bwi/bwi/blob/master/demo_v4.md) in this directory.
