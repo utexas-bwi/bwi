@@ -20,8 +20,7 @@ From top to bottom, the released repositories are:
 
 ### From Source
 
-You can install all the BWI components normally built from source on
-either ROS Indigo, Kinetic, or Melodic.  For the V4 bots, use Melodic.
+You can install all the BWI components normally built from source on ROS Melodic.
 
 First, install ROS
 [Indigo](http://wiki.ros.org/indigo/Installation/Ubuntu),
@@ -36,15 +35,9 @@ Then, make sure the ROS_DISTRO environment variable is set correctly:
 echo $ROS_DISTRO
 ```
 
-It may already be.  If not, issue the appropriate one of these two
-shell commands:
-
+It may already be.  If not, 
 ```
-$ export ROS_DISTRO=kinetic
-```
-or
-```
-$ export ROS_DISTRO=melodic
+export ROS_DISTRO=melodic
 ```
 
 Next, clone the source repositories:
@@ -90,7 +83,7 @@ is recommended.
 The V4 bots at AHG use some additional branches of the utexas-bwi repo.  To install these, run the following commands from your ~/catkin_ws directory (they will change directories):
 
 ```
-$ roscd bwi_common && git fetch && git checkout architecture-update
+$ cd ~/catkin_ws/src/bwi_common
 $ git submodule init
 $ git submodule update
 
@@ -128,11 +121,6 @@ $ pip install -U pyYAML
 Then you will need to create a password for postgres.  To do so, run the script below and follow the promts to enter a password that is not empty:
 ```
 $ ./src/bwi_common/knowledge_representation/scripts/configure_postgresql.sh
-```
-
-Finally, run the command prepare_knowledge_bwi_ahg:
-```
-$ prepare_knowledge_bwi_ahg
 ```
 
 At this point, you should be able to run the BWIbot V4 visit doors demo in Anna Hiss Gym.  See the [demo instructions](https://github.com/utexas-bwi/bwi/blob/master/demo_v4.md) in this directory.
