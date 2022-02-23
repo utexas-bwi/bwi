@@ -130,4 +130,9 @@ Then you will need to create a password for postgres.  To do so, run the script 
 $ ./src/bwi_common/knowledge_representation/scripts/configure_postgresql.sh
 ```
 
+Finally, run the command prepare_knowledge_bwi_ahg:
+```
+$ prepare_knowledge_bwi_ahg
+```
+
 At this point, you should be able to run the BWIbot V4 visit doors demo in Anna Hiss Gym.  See the [demo instructions](https://github.com/utexas-bwi/bwi/blob/master/demo_v4.md) in this directory.
