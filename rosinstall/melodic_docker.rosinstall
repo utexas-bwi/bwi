@@ -45,4 +45,4 @@
 - git:
     local-name: ahg_common
     uri: https://github.com/utexas-bwi/ahg_common.git
-    version: ahg2s_map
+    version: 470379b
