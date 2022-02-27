@@ -18,6 +18,13 @@ From top to bottom, the released repositories are:
 
 ## Installation
 
+### As a Docker Image
+
+Currently the BWI base is supported up to Ubuntu 18.04 and ROS Melodic.
+If you are using Ubuntu 20.04 LTS+, you can install and build the
+BWI code base as a Docker image using the 
+[bwi-docker](https://github.com/utexas-bwi/bwi-docker) package.
+
 ### From Source
 
 You can install all the BWI components normally built from source on
@@ -120,12 +127,12 @@ After building your workspace or packages, instead of using "source devel/setup.
 $ sws
 ```
 
-Next, update pyYAML:
+Install pyYAML:
 ```
 $ pip install -U pyYAML
 ```
 
-Then you will need to create a password for postgres.  To do so, run the script below and follow the promts to enter a password that is not empty:
+Then create a password for postgres.  Run the script below and follow the promts to enter a password that is not empty:
 ```
 $ ./src/bwi_common/knowledge_representation/scripts/configure_postgresql.sh
 ```
@@ -135,4 +142,4 @@ Finally, run the command prepare_knowledge_bwi_ahg:
 $ prepare_knowledge_bwi_ahg
 ```
 
-At this point, you should be able to run the BWIbot V4 visit doors demo in Anna Hiss Gym.  See the [demo instructions](https://github.com/utexas-bwi/bwi/blob/master/demo_v4.md) in this directory.
+At this point, you should run the BWIbot V4 [visit doors demo](https://github.com/utexas-bwi/bwi/blob/master/demo_v4.md) in Anna Hiss Gym to validate the installation.
