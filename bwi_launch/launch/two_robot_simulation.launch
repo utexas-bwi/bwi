@@ -50,4 +50,8 @@
     <arg name="y" value="$(arg y2)" />
     <arg name="yaw" value="$(arg yaw2)" />
   </include>
+  
+  <!-- launch collision detector -->
+  <node name="collision_detector" pkg="lidar_hallucination" type="collision_detector" args="$(arg robot1) $(arg robot2)" />
+  
 </launch>
