@@ -1,0 +1,53 @@
+<launch>
+  <arg name="use_sim_time" default="true" />
+  <arg name="gui"   default="false" />
+  <arg name="rviz"  default="false" />
+  <arg name="default_level" default="3rdFloor" />
+  <arg name="world" default="$(find utexas_gdc)/worlds/3ne.world" />
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/combined.yaml" />
+
+  <arg name="robot1" default="marvin"/>
+  <arg name="x1" default="0.0"/>
+  <arg name="y1" default="8.0"/>
+  <arg name="yaw1" default="0.0"/>
+
+  <arg name="robot2" default="roberto"/>
+  <arg name="x2" default="0.0"/>
+  <arg name="y2" default="10.0"/>
+  <arg name="yaw2" default="0.0"/>
+
+  <!-- start the simulation environment -->
+  <group if="$(arg use_sim_time)">
+    <param name="/use_sim_time" value="true" />
+  </group>
+  <node name="gazebo" pkg="gazebo_ros" type="gzserver" args="$(arg world)" respawn="false" output="screen" launch-prefix="$(optenv OPTIRUN_LAUNCH_PREFIX)" />
+  <group if="$(arg gui)">
+    <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen" launch-prefix="$(optenv OPTIRUN_LAUNCH_PREFIX)" />
+  </group>
+
+  <!-- launch the multi map server for the simulated world -->
+  <node name="multi_level_map_server" pkg="multi_level_map_server" type="multi_level_map_server">
+    <param name="map_file" value="$(arg multimap_file)" />
+  </node>
+
+  <!-- uncomment it when you are working with 3ne.world -->
+  <!-- <include file="$(find segbot_simulation_apps)/launch/door_handler.launch" /> -->
+
+  <include file="$(find bwi_launch)/launch/includes/simulation_ns.launch.xml">
+    <arg name="rviz" value="$(arg rviz)"/>
+    <arg name="default_level" value="$(arg default_level)"/>
+    <arg name="ns" value="$(arg robot1)" />
+    <arg name="x" value="$(arg x1)" />
+    <arg name="y" value="$(arg y1)" />
+    <arg name="yaw" value="$(arg yaw1)" />
+  </include>
+
+  <include file="$(find bwi_launch)/launch/includes/simulation_ns.launch.xml">
+    <arg name="rviz" value="$(arg rviz)"/>
+    <arg name="default_level" value="$(arg default_level)"/>
+    <arg name="ns" value="$(arg robot2)" />
+    <arg name="x" value="$(arg x2)" />
+    <arg name="y" value="$(arg y2)" />
+    <arg name="yaw" value="$(arg yaw2)" />
+  </include>
+</launch>

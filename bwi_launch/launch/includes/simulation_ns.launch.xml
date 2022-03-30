@@ -2,6 +2,9 @@
 
   <arg name="ns" />
 
+  <arg name="rviz" default="false"/>
+  <arg name="default_level" default="3rdFloor" />
+
   <arg name="x" default="0" />
   <arg name="y" default="0" />
   <arg name="yaw" default="0" />
@@ -14,15 +17,18 @@
 
   <group ns="$(arg ns)">
 
+    <param name="level_mux/default_current_level" value="$(arg default_level)" />
+
     <!-- also launch the level multiplexer and the level selector -->
     <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
       <param name="global_frame_id" value="$(arg ns)/level_mux_map" />
       <remap from="map_metadata" to="/map_metadata" />
     </node>
-
-    <node name="level_selector" pkg="multi_level_map_utils" type="level_selector">
-      <remap from="map_metadata" to="/map_metadata" />
-    </node>
+    <group if="$(arg rviz)">
+      <node name="level_selector" pkg="multi_level_map_utils" type="level_selector">
+        <remap from="map_metadata" to="/map_metadata" />
+      </node>
+    </group>
 
     <!-- launch the interruptable action server -->
     <node name="move_base_interruptable" pkg="segbot_navigation" type="move_base_interruptable_server" />
@@ -68,8 +74,9 @@
     </node>
 
     <!-- launch vizualization -->
-    <node name="rviz" type="rviz_runner" pkg="segbot_navigation" args="ns $(arg ns)" />
-
+    <group if="$(arg rviz)">
+      <node name="rviz" type="rviz_runner" pkg="segbot_navigation" args="ns $(arg ns)" />
+    </group>
     <!-- launch the question dialog gui -->
     <!--
     <node name="gui" type="question_dialog_plugin" pkg="bwi_rqt_plugins" />
