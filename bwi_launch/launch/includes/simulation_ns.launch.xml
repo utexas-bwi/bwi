@@ -77,6 +77,13 @@
     <group if="$(arg rviz)">
       <node name="rviz" type="rviz_runner" pkg="segbot_navigation" args="ns $(arg ns)" />
     </group>
+    
+<!-- Comment this line if you are not using hallucination module -->
+    <node name="lidar_hallucination" type="lidar_hallucinate" pkg="lidar_hallucination" > <!-- output="screen" -->
+      <param name="add_circle_topic"  value="add_circle" />
+      <param name="input_scan_topic"  value="scan_filtered" />
+      <param name="output_scan_topic" value="scan_hallucinated" />
+    </node>
     <!-- launch the question dialog gui -->
     <!--
     <node name="gui" type="question_dialog_plugin" pkg="bwi_rqt_plugins" />
