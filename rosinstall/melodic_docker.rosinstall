@@ -46,3 +46,5 @@
     local-name: ahg_common
     uri: https://github.com/utexas-bwi/ahg_common.git
     version: ahg2s_map
+- git: {local-name: segbot_bringup,
+    uri: 'https://github.com/utexas-bwi/segbot_bringup.git', version: main}

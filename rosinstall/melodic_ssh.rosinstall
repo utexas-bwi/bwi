@@ -38,3 +38,5 @@
     local-name: segway_v3
     uri: git@github.com:utexas-bwi/segway_v3.git
     version: melodic-devel
+- git: {local-name: segbot_bringup,
+    uri: 'https://github.com/utexas-bwi/segbot_bringup.git', version: main}

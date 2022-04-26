@@ -14,3 +14,5 @@
     version: master}
 - git: {local-name: segway_rmp, uri: 'https://github.com/segwayrmp/segway_rmp.git',
     version: master}
+- git: {local-name: segbot_bringup,
+    uri: 'https://github.com/utexas-bwi/segbot_bringup.git', version: main}
