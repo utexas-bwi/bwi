@@ -1,0 +1,22 @@
+- git:
+    local-name: bwi
+    uri: https://github.com/utexas-bwi/bwi.git
+    version: master
+- git:
+    local-name: libsegwayrmp
+    uri: https://github.com/utexas-bwi/libsegwayrmp.git
+    version: master
+- git:
+    local-name: segbot
+    uri: https://github.com/utexas-bwi/segbot.git
+    version: master
+- git:
+    local-name: segway_rmp
+    uri: https://github.com/utexas-bwi/segway_rmp.git
+    version: master
+- git:
+    local-name: segway_v3
+    uri: https://github.com/utexas-bwi/segway_v3.git
+    version: melodic-devel
+- git: {local-name: segbot_bringup,
+    uri: 'https://github.com/utexas-bwi/segbot_bringup.git', version: main}
