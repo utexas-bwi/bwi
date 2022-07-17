@@ -1,0 +1,82 @@
+<launch>
+
+  <arg name="ns" />
+
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="yaw" default="0" />
+
+  <arg name="rviz" default="true" />
+  <arg name="default_level" default="empty" />
+
+  <arg name="localization_scan_topic" default="scan_filtered" />
+  <arg name="move_base_config" default="segbotv2" />
+
+  <arg name="use_arm" default="false" />
+  <arg name="use_perception" default="false" />
+
+  <group ns="$(arg ns)">
+
+    <!-- also launch the level multiplexer and the level selector -->
+    <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
+      <param name="global_frame_id" value="$(arg ns)/level_mux_map" />
+      <remap from="map_metadata" to="/map_metadata" />
+    </node>
+
+    <param name="level_mux/default_current_level" value="$(arg default_level)" />
+
+    <!-- launch the interruptable action server -->
+    <node name="move_base_interruptable" pkg="segbot_navigation" type="move_base_interruptable_server" />
+    <node name="move_base_interruptable_simple" pkg="segbot_navigation" type="move_base_interruptable_simple" />
+
+    <include file="$(find segbot_bringup)/launch/includes/auxiliary.segbot_v2.launch.xml">
+      <arg name="use_full_gazebo_model" value="false" />
+      <arg name="tf_prefix" value="" />
+      <arg name="use_nav_kinect" value="true" />
+      <arg name="use_arm" value="$(arg use_arm)" />
+      <arg name="use_perception" value="$(arg use_perception)" />
+      <arg name="urdf_file" value="$(find segbot_description)/robots/segbot_v2.arm.urdf.xacro" if="$(arg use_arm)" />
+      <arg name="urdf_file" value="$(find segbot_description)/robots/segbot_v2.urdf.xacro" unless="$(arg use_arm)" />
+    </include>
+
+
+    <include file="$(find segbot_gazebo)/launch/segbot_mobile_base.launch">
+      <arg name="x" value="$(arg x)" />
+      <arg name="y" value="$(arg y)" />
+      <arg name="yaw" value="$(arg yaw)" />
+      <arg name="robotid" value="$(arg ns)" />
+      <arg name="tf_prefix" value="$(arg ns)"/>
+      <arg name="odom_frame_id" value="$(arg ns)/odom" />
+      <arg name="base_frame_id" value="$(arg ns)/base_footprint" />
+      <arg name="map_frame" value="$(arg ns)/level_mux_map" />
+      <arg name="map_service" value="level_mux/static_map" />
+      <arg name="map_topic" value="level_mux/map" />
+      <arg name="navigation_map_topic" value="bwi_logical_navigator/map" />
+      <arg name="launch_localization" value="true" />
+      <arg name="localization_scan_topic" default="$(arg localization_scan_topic)" />
+      <arg name="use_fake_localization" value="false" />
+      <arg name="move_base_server" value="move_base_interruptable" />
+      <arg name="move_base_config" value="$(arg move_base_config)" />
+      <arg name="launch_move_base" value="true" />
+      <arg name="use_full_gazebo_model" value="false" />
+    </include>
+
+    <!-- Finally, launch the bwi_logical_navigator to do low-level logical navigation. -->
+    <node name="bwi_logical_navigator" pkg="bwi_logical_translator" type="bwi_logical_navigator">
+      <param name="global_frame_id" value="$(arg ns)/level_mux_map" />
+      <remap from="move_base" to="move_base_interruptable" />
+      <remap from="map_metadata" to="/map_metadata" />
+    </node>
+
+    <!-- launch vizualization -->
+    <group if="$(arg rviz)">
+      <node name="rviz" type="rviz_runner" pkg="segbot_navigation" args="ns $(arg ns)" />
+    </group>
+
+    <!-- launch hokuyo hallucination -->
+    <node name="hokuyo_hallucination" pkg="bwi_hallucination" type="hokuyo_hallucination" />
+
+  </group>
+
+</launch>
+

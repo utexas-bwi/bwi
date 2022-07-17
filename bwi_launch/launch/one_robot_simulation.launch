@@ -1,0 +1,34 @@
+<launch>
+  <arg name="use_sim_time" default="true" />
+  <arg name="gui"   default="false" />
+  <arg name="rviz"  default="false" />
+  <arg name="world" default="L-shape-1.6m" />
+  <arg name="default_level" default="L-shape-1.6m" />
+  <!-- <arg name="multimap_file" default="$(find train_world)/maps/combined.yaml" /> -->
+
+  <!-- <arg name="robot1" default="marvin"/> -->
+  <arg name="robot1" default="marvin"/>
+  <arg name="x1" default="-5.0"/>
+  <arg name="y1" default="0.0"/>
+  <arg name="yaw1" default="0.0"/>
+
+  <!-- start the simulation environment -->
+  <include file="$(find train_world)/launch/start_world.launch">
+    <arg name="use_sim_time" value="$(arg use_sim_time)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="world" value="$(arg world)" />
+  </include>
+
+  <include file="$(find bwi_launch)/launch/includes/simulation_ns.launch.xml">
+    <arg name="rviz" value="$(arg rviz)"/>
+    <arg name="default_level" value="$(arg default_level)"/>
+    <arg name="ns" value="$(arg robot1)" />
+    <arg name="x" value="$(arg x1)" />
+    <arg name="y" value="$(arg y1)" />
+    <arg name="yaw" value="$(arg yaw1)" />
+  </include>
+  
+  <!-- launch collision detector -->
+  <!-- <node name="collision_detector" pkg="lidar_hallucination" type="collision_detector" args="$(arg robot1) $(arg robot2)" /> -->
+  
+</launch>

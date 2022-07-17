@@ -1,0 +1,34 @@
+<launch>
+
+  <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap2/combined.yaml" />
+  <arg name="x" default="15.0" />
+  <arg name="y" default="110.0" />
+  <arg name="yaw" default="0" />
+
+  <include file="$(find bwi_launch)/launch/includes/simulation.launch.xml" >
+    <arg name="multimap_file" value="$(arg multimap_file)" />
+  </include>
+
+  <!-- launch robot description and robot internal tf tree, along with any common nodes between h/w and software-->
+  <include file="$(find segbot_bringup)/launch/includes/auxiliary.segbot_v3.launch.xml" />
+
+
+  <include file="$(find segbot_gazebo)/launch/segbot_mobile_base.launch">
+    <arg name="x" value="$(arg x)" />
+    <arg name="y" value="$(arg y)" />
+    <arg name="yaw" value="$(arg yaw)" />
+    <arg name="robotid" value="segbot" />
+    <arg name="map_frame" value="level_mux_map" />
+    <arg name="map_service" value="level_mux/static_map" />
+    <arg name="map_topic" value="level_mux/map" />
+    <arg name="navigation_map_topic" value="bwi_logical_navigator/map" />
+    <arg name="launch_localization" value="true" />
+    <arg name="localization_scan_topic" value="velodyne/scan_filtered" />
+    <arg name="use_fake_localization" value="false" />
+    <arg name="move_base_server" value="move_base_interruptable" />
+    <arg name="move_base_config" value="segbotv3" />
+    <arg name="launch_move_base" value="true" />
+    <arg name="use_full_gazebo_model" value="false" />
+  </include>
+
+</launch>
