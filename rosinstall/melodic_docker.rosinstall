@@ -5,7 +5,7 @@
 - git:
     local-name: bwi_common
     uri: https://github.com/utexas-bwi/bwi_common.git
-    version: master
+    version: corrie/minimal
 - git:
     local-name: libsegwayrmp
     uri: https://github.com/utexas-bwi/libsegwayrmp.git
