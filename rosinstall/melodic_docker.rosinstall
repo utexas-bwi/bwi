@@ -13,7 +13,7 @@
 - git:
     local-name: segbot
     uri: https://github.com/utexas-bwi/segbot.git
-    version: corrie-docker
+    version: 8dd0208
 - git:
     local-name: segway_v3
     uri: https://github.com/utexas-bwi/segway_v3.git
