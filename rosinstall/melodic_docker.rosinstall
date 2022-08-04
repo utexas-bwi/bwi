@@ -26,3 +26,19 @@
     local-name: ahg_common
     uri: https://github.com/utexas-bwi/ahg_common.git
     version: ahg2s_map
+- git:
+    local-name: agile_grasp
+    uri: https://github.com/utexas-bwi/agile_grasp.git
+    version: melodic-devel
+- git:
+    local-name: camera1394
+    uri: https://github.com/ros-drivers/camera1394
+    version: master
+- git:
+    local-name: frontier_exploration
+    uri: https://github.com/paulbovbel/frontier_exploration.git
+    version: melodic-devel
+- git:
+    local-name: kinova-ros
+    uri: https://github.com/utexas-bwi/kinova-ros.git
+    version: melodic-devel
