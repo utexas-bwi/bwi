@@ -15,6 +15,10 @@
     uri: https://github.com/utexas-bwi/segbot.git
     version: 8dd0208b32
 - git:
+    local-name: segway_rmp
+    uri: https://github.com/utexas-bwi/segway_rmp.git
+    version: 82515229c0
+- git:
     local-name: segway_v3
     uri: https://github.com/utexas-bwi/segway_v3.git
     version: melodic-devel
