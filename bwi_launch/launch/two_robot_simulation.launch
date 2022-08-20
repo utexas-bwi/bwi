@@ -8,13 +8,13 @@
 
   <!-- <arg name="robot1" default="marvin"/> -->
   <arg name="robot1" default="marvin"/>
-  <arg name="x1" default="-5.0"/>
+  <arg name="x1" default="-13.0"/>
   <arg name="y1" default="0.0"/>
   <arg name="yaw1" default="0.0"/>
 
   <arg name="robot2" default="rob"/>
   <arg name="x2" default="0.0"/>
-  <arg name="y2" default="-5.0"/>
+  <arg name="y2" default="-13.0"/>
   <arg name="yaw2" default="1.57"/>
 
   <!-- start the simulation environment -->
