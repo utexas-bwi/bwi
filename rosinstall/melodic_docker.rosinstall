@@ -19,6 +19,10 @@
     uri: https://github.com/utexas-bwi/segway_rmp.git
     version: corrie-docker
 - git:
+    local-name: segway_v3
+    uri: https://github.com/utexas-bwi/segway_v3.git
+    version: master
+- git:
     local-name: bwi_robofleet
     uri: https://github.com/utexas-bwi/bwi_robofleet.git
     version: main
