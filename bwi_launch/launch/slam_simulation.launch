@@ -6,6 +6,7 @@
   <arg name="yaw" default="0" /> 
   <arg name="use_arm" default="false" />
   <arg name="use_perception" default="false" />
+  <arg name="explore_params" default="$(find bwi_launch)/config/exploration.yaml" />
 
   <include file="$(find bwi_launch)/launch/includes/slam_simulation.launch.xml" >
     <arg name="multimap_file" value="$(arg multimap_file)" />
@@ -44,5 +45,9 @@
     <arg name="launch_move_base" value="true" />
     <arg name="use_full_gazebo_model" value="false" />
   </include>
+
+  <node pkg="explore_lite" type="explore" respawn="false" name="explore" output="screen">
+        <rosparam file="$(arg explore_params)" command="load" />
+  </node>
 
 </launch>
