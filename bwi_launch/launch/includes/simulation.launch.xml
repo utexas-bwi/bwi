@@ -1,10 +1,18 @@
 <launch>
   <arg name="multimap_file" default="$(find utexas_gdc)/maps/simulation/multimap/combined.yaml"/>
+  <arg name="realistic_gazebo_sim" default="false"/>
   <arg name="non_gazebo_sim" default="false"/>
 
   <!-- start the simulation environment -->
   <group unless="$(arg non_gazebo_sim)">
-      <include file="$(find utexas_gdc)/launch/simulation_multimap.launch" />
+      <group unless="$(arg realistic_gazebo_sim)">
+          <include file="$(find utexas_gdc)/launch/simulation_multimap.launch" />
+      </group>
+      <group if="$(arg realistic_gazebo_sim)">
+          <include file="$(find utexas_gdc)/launch/simulation_3ne.launch">
+            <arg name="realistic" value="true"/>
+          </include>
+      </group>
   </group>
 
   <!-- launch the multi map server for the simulated world -->
