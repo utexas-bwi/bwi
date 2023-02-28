@@ -11,6 +11,10 @@
     uri: https://github.com/utexas-bwi/bwi_common.git
     version: master
 - git:
+    local-name: ahg_common
+    uri: https://github.com/utexas-bwi/ahg_common.git
+    version: ahg2s_map
+- git:
     local-name: camera1394
     uri: https://github.com/ros-drivers/camera1394
     version: master
