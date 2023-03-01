@@ -52,7 +52,7 @@ Note that you can halt moves by pressing the spacebar.
 ### Run the demo routine
 Now you are ready to run the demo routine.  Open another terminal window and type:
 ```
-rosrun bwi_tasks visit_door_list
+rosrun bwi_tasks visit_door_list_smach
 ```
 The robot will begin visiting doors on the floor.  To stop the program, type "ctrl+C", but note that the robot will continue to its next goal door before stopping.
 
