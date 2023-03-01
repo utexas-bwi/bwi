@@ -13,25 +13,24 @@ To perform a demo of the BWIbots for visitors, or to test an installation of the
 As a demonstration of the BWIbots' abilities to navigate a building, avoid visitors, and perform tasks, you can use the "Visit Door List" executables that are part of the bwi_tasks package.
 
 ### Turn on the robot
-1. Disconnect the charging cable.
-   - Find the cable leading from the wall-powered charging brick to the robot main power box and disconnect it. Detach by holding the connectors only, and don't pull the connection apart using the wires as they may break off.
-**Before leaving the lab, ensure that you put the robot back on charging**
+1. Disconnect the robot charging cable and the Jackery (the orange and grey power box) charging cable.
 
-2.  Change the battery mode from "Charging" to "Battery":
-    - Find the panel on the robot. There is a large, three-position flip switch with the two extreme positions labeled "Charger" and "Battery". Flip from charger all the way to battery. The middle position has no specific function.
+2. Plug the robot charging cable into a Jackery AC power port.  Ensure those ports are on - the button above them will be illuminated green.
 
 3.  Turn the laptop on.  Use the appropriate user/pass to log onto the machine.
 
+If you wish to move the robot manually, you could do so now.  The next step will turn power on to the robot motors, at which point you should NOT try to manually move the robot.
+
 4.  Now turn the Segway base on:
     - Locate the power buttons underneath the bottom of the Segway base. First press the **GREEN** button to power the segway base and wait 2 s. before the next step.
-    - If you wish to move the robot manually, you could do so now.  The next step will turn power on to the motors, at which point you should NOT try to manually move the robot.
+
     - To power the segway base motors: Press the **YELLOW** button. You'll hear an audible beep and the blue light will turn on. While the segway motors and processors are on, do not move the robots manually!
 
 You should now be able to operate the robot using the laptop.
 
 Note: If the base beeps or shakes, the internal base battery is too low.  Allow the robot to sit with the base OFF and the main power ON (swithed to "battery") for 5 min., then try step 4 again.
 
-### Move the robot to starting position
+### Move the robot to starting position using teleop
 You will use the computer keyboard to control the robot, but first you must run the segbot launch file.  In a terminal window, type:
 ```
 roslaunch bwi_launch segbot_v2.launch
@@ -61,7 +60,5 @@ The robot will begin visiting doors on the floor.  To stop the program, type "ct
 2.  Cancel/Kill all running ROS programs.
 3.  Press the YELLOW button on the segway base to disengage the motors.
 4.  Press the GREEN button on the base to turn off the segway base.  You can manually position the robot at this point if you need it closer to the charger, or otherwise move it around.
-5.  Turn OFF the laptop.
-6.  Plug in the charging cable.
-7.  Switch the power switch on the main power box from "BATTERY" to "CHARGER".
-8.  Make sure the v2 wall charger is running - it should make noise.  If not, turn it off and on again.
+5.  Logout of the laptop.
+6.  Plug in the robot charging cable into wall power and connect the barrel-plug charger to the Jackery. Make sure the Jackery AC power plugs are "ON" **Never skip step 6!**
