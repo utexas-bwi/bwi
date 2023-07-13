@@ -53,6 +53,7 @@
     <arg name="simulation" value="false" />
   </include>
 
-
+  <!-- launch hokuyo hallucination -->
+  <node name="hokuyo_hallucination" pkg="bwi_hallucination" type="hokuyo_hallucination" />
 
 </launch>
