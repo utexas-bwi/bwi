@@ -44,10 +44,11 @@ Note that you can halt moves by pressing the spacebar.
 
 ### Orient the robot in space
 1. Go to the RViz window that opened when you ran the launch file.
-2. Take a look at the map and identify the robot's new location and heading in the hallway.
-3.  Click the "2D pose estimate" button at the top of the RViz window to activate the tool.
-4.  Move the mouse pointer to the robot's location on the map, then click and drag in the direction of heading.
-5.  You should see green points around the robot indicating that the robot is sensing walls and other obstacles.
+2. On the pop-up menu, select "2ndFloorWhole" to select the full floor AHG map.
+3. Take a look at the map and identify the robot's new location and heading in the hallway.
+4.  Click the "2D pose estimate" button at the top of the RViz window to activate the tool.
+5.  Move the mouse pointer to the robot's location on the map, then click and drag in the direction of heading.
+6.  You should see green points around the robot indicating that the robot is sensing walls and other obstacles.
 ### Run the demo routine
 Now you are ready to run the demo routine.  It is reccomended to get both robots to this step before continuing.  If the teleop keyboard program is still running, type "ctrl+C" in that terminal to stop it before continuing.
 
