@@ -11,11 +11,13 @@
   <arg name="x1" default="-13.0"/>
   <arg name="y1" default="0.0"/>
   <arg name="yaw1" default="0.0"/>
+  <arg name="local_planner1" default="eband"/>
 
   <arg name="robot2" default="rob"/>
   <arg name="x2" default="0.0"/>
   <arg name="y2" default="-13.0"/>
   <arg name="yaw2" default="1.57"/>
+  <arg name="local_planner2" default="eband"/>
 
   <!-- start the simulation environment -->
   <include file="$(find train_world)/launch/start_world.launch">
@@ -31,6 +33,7 @@
     <arg name="x" value="$(arg x1)" />
     <arg name="y" value="$(arg y1)" />
     <arg name="yaw" value="$(arg yaw1)" />
+    <arg name="local_planner" value="$(arg local_planner1)" />
   </include>
 
   <include file="$(find bwi_launch)/launch/includes/simulation_ns.launch.xml">
@@ -40,6 +43,7 @@
     <arg name="x" value="$(arg x2)" />
     <arg name="y" value="$(arg y2)" />
     <arg name="yaw" value="$(arg yaw2)" />
+    <arg name="local_planner" value="$(arg local_planner2)" />
   </include>
 
   <!-- launch collision detector -->
