@@ -11,6 +11,7 @@
 
   <arg name="localization_scan_topic" default="scan_filtered" />
   <arg name="move_base_config" default="segbotv2" />
+  <arg name="local_planner" default="eband" />
 
   <arg name="use_arm" default="false" />
   <arg name="use_perception" default="false" />
@@ -58,6 +59,7 @@
       <arg name="move_base_server" value="move_base_interruptable" />
       <arg name="move_base_config" value="$(arg move_base_config)" />
       <arg name="launch_move_base" value="true" />
+      <arg name="local_planner" value="$(arg local_planner)" />
       <arg name="use_full_gazebo_model" value="false" />
     </include>
 
