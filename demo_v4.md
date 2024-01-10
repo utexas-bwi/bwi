@@ -20,13 +20,14 @@ As a demonstration of the BWIbots' abilities to navigate a building, avoid visit
 
 You should now be able to use the robot.
 
-### Move the robot to starting position
+### Launch the robot software
+**If you are running ROS inside a [bwi-docker](https://github.com/utexas-bwi/bwi-docker) container, do each of these commands inside a container shell.**
 
-You will use the computer keyboard to control the robot, but first you must run the segbot launch file.  In a terminal window, type:
+Launch all the ROS nodes that enable robot autonomy, including the base, sensors, RViz and other utilities.  In a terminal window, type:
 ```
 roslaunch bwi_launch segbot_v4_ahg.launch
 ```
-Then open another terminal window to run the teleop keyboard:
+You can use the computer keyboard to send velocity commands to the base.  To do so, open another terminal window to run the teleop keyboard:
 ```
 rosrun segbot_bringup teleop_twist_keyboard
 ```
@@ -45,7 +46,7 @@ Note that you can halt moves by pressing the spacebar.  To stop ALL robot proces
 
 Now you are ready to run the demo routine.  Open another terminal window and type:
 ```
-rosrun bwi_tasks visit_door_list_smach
+rosrun bwi_tasks visit_door_list_phhp
 ```
 The robot will begin visiting doors on the floor.  To stop the program, type "ctrl+C", but note that the robot will continue to its next goal door before stopping.
 
