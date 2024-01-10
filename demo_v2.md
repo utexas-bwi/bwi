@@ -30,28 +30,31 @@ You should now be able to operate the robot using the laptop.
 
 Note: If the base beeps or shakes, the internal base battery is too low.  Allow the robot to sit with the base OFF and the main power ON (swithed to "battery") for 5 min., then try step 4 again.
 
-### Move the robot to starting position using teleop
-You will use the computer keyboard to control the robot, but first you must run the segbot launch file.  In a terminal window, type:
+### Launch the robot software
+**If you are running ROS inside a [bwi-docker](https://github.com/utexas-bwi/bwi-docker) container, do each of these commands inside a container shell.**
+
+Launch all the ROS nodes that enable robot autonomy, including the base, sensors, RViz and other utilities.  In a terminal window, type:
 ```
-roslaunch bwi_launch segbot_v2.launch
+roslaunch bwi_launch segbot_v2_ahg.launch
 ```
-Then open another terminal window to run the teleop keyboard:
+You can use the computer keyboard to send velocity commands to the base.  To do so, open another terminal window to run the teleop keyboard:
 ```
 rosrun segbot_bringup teleop_twist_keyboard
 ```
 Follow the instructions in the teleop keyboard terminal window to move the robot into the hallway adjacent to the BWI computer lab.  **Before executing move commands**, reduce the robot speed settings below 0.5 by pressing "z" (speed settings will display in the terminal window).
 Note that you can halt moves by pressing the spacebar.
 
-### Orient the robot in space
+### Orient the robot in the map
 1. Go to the RViz window that opened when you ran the launch file.
 2. Take a look at the map and identify the robot's new location and heading in the hallway.
 3.  Click the "2D pose estimate" button at the top of the RViz window to activate the tool.
 4.  Move the mouse pointer to the robot's location on the map, then click and drag in the direction of heading.
 5.  You should see green points around the robot indicating that the robot is sensing walls and other obstacles.
+   
 ### Run the demo routine
 Now you are ready to run the demo routine.  Open another terminal window and type:
 ```
-rosrun bwi_tasks visit_door_list_smach
+rosrun bwi_tasks visit_door_list_phhp
 ```
 The robot will begin visiting doors on the floor.  To stop the program, type "ctrl+C", but note that the robot will continue to its next goal door before stopping.
 
