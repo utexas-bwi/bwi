@@ -46,7 +46,7 @@
     <arg name="local_planner" value="$(arg local_planner2)" />
   </include>
 
-  <!-- launch collision detector -->
-  <!-- <node name="collision_detector" pkg="lidar_hallucination" type="collision_detector" args="$(arg robot1) $(arg robot2)" /> -->
+  <!-- launch gazebo contact republisher to detect collision -->
+  <node name="gazebo_contact_republisher" pkg="gazebo_contact_republisher" type="gazebo_contact_republisher_node" />
   
 </launch>
