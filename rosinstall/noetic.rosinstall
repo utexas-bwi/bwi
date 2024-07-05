@@ -46,5 +46,7 @@
     local-name: segway_v3
     uri: https://github.com/utexas-bwi/segway_v3.git
     version: noetic-devel
-- git: {local-name: segbot_bringup,
-    uri: 'https://github.com/utexas-bwi/segbot_bringup.git', version: noetic-devel}
+- git: 
+    local-name: segbot_bringup
+    uri: https://github.com/utexas-bwi/segbot_bringup.git
+    version: noetic-devel
