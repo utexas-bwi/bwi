@@ -1,0 +1,10 @@
+<launch>
+
+  <include file="$(find bwi_launch)/launch/simulation_v2.launch">
+    <arg name="multimap_file" value="$(find utexas_gdc)/maps/real/multimap/3_only_multimap.yaml" />
+    <arg name="x" value="-9.0" />
+    <arg name="y" value="-12.0" />
+    <arg name="realistic_gazebo_sim" value="true"/>
+  </include>
+
+</launch>

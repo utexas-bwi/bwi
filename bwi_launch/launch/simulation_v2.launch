@@ -7,10 +7,12 @@
   <arg name="use_arm" default="false" />
   <arg name="use_perception" default="false" />
   <arg name="non_gazebo_sim" default="false" />
+  <arg name="realistic_gazebo_sim" default="false" />
 
   <include file="$(find bwi_launch)/launch/includes/simulation.launch.xml" >
     <arg name="multimap_file" value="$(arg multimap_file)"/>
     <arg name="non_gazebo_sim" value="$(arg non_gazebo_sim)"/>
+    <arg name="realistic_gazebo_sim" value="$(arg realistic_gazebo_sim)"/>
   </include>
 
   <!-- launch robot description and robot internal tf tree, along with any common nodes between h/w and software-->
